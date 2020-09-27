@@ -38,7 +38,7 @@ Things you may want to cover:
 |introduction|text||
 ### Association
 - has_many :items
-- has_one:credit card
+- has_one:credit_card
 - has_many :addresses
 
 ## credit_cardsテーブル
@@ -104,7 +104,7 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string||
+|name|string|null: false|
 ### Association
 - has_many :items
 
@@ -118,42 +118,3 @@ Things you may want to cover:
 - belongs_to :item
 
 
-## sizes (active_hash)
-|Column|Type|Options|
-|------|----|-------|
-|size|string|null: false|
-### Association
-- has_many :items
-
-
-## conditions (active_hash)
-|Column|Type|Options|
-|------|----|-------|
-|condition|string|null: false|
-### Association
-- has_many :items
-
-
-## preparation_days (active_hash)
-|Column|Type|Options|
-|------|----|-------|
-|preparation_day|string|null: false|
-### Association
-- has_many :items
-
-
-## postage_payers (active_hash)
-|Column|Type|Options|
-|------|----|-------|
-|postage_payer|string|null: false|
-### Association
-- has_many :items
-
-
-## prefectur​es (active_hash)
-|Column|Type|Options|
-|------|----|-------|
-|prefecture|string|null: false|
-### Association
-- has_many :items
-- has_many:adresses
