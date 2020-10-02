@@ -1,0 +1,33 @@
+.mypage-main
+  .mypage-wrapper
+    .mypage-sidebar
+      %ul.mypage-sidebar__topics
+        マイページ
+        %li.mypage-sidebar__topic
+          出品する
+        %li.mypage-sidebar__topic
+          出品した商品
+        %li.mypage-sidebar__topic
+          購入した商品
+      %ul.mypage-sidebar__topics
+        設定・ヘルプ
+        %li.mypage-sidebar__topic
+          設定
+        %li.mypage-sidebar__topic
+          お問い合わせ
+        %li.mypage-sidebar__topic
+          ログアウト
+    .mypage-contents  
+      .mypage-contents__user
+        %h1.mypage-contents__user--name ベンティ
+        .mypage-contents__user--evaluations
+          %p.evaluation  評価 4
+          %p.evaluation 出品数 2
+        = image_tag 'mypage-top.png', class: 'top-image'
+      .mypage-contents__wrapper
+        %ul.mypage-contents__wrapper--topics
+          お知らせ
+          %li.mypage-contents__wrapper--topic
+            落札した商品が発送されました
+      -# = link_to mypage_path, class: "site-nav__btn" do
+      -#   マイページ
