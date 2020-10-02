@@ -84,23 +84,29 @@
   .pickup-container
     .pickup-container__title
       ピックアップカテゴリー
-    .pickup-container__product
-      .pickup-container__product__head
-        新規投稿商品
-      .pickup-container__product__item
-        = link_to (image_tag ("image_1.jpeg"), class:"item-image"), "#"
-        = link_to (image_tag ("image_2.jpeg"), class:"item-image"), "#"
-        = link_to (image_tag ("image_3.png"), class:"item-image"), "#"
-        = link_to (image_tag ("image_4.png"), class:"item-image"), "#"
-        = link_to (image_tag ("image_5.png"), class:"item-image"), "#"
+      .pickup-container__product
+        = link_to "新規投稿商品", "#", class:"product__head"
+    
+      
+        .pickup-container__product__item
+          .pickup-container__product__item__image
+            = link_to (image_tag ("image_1.jpeg"), class:"item-image"), "#"
+            .pickup-container__product__item__body
+              .pickup-container__product__item__text
+            = link_to (image_tag ("image_2.jpeg"), class:"item-image"), "#"
+            = link_to (image_tag ("image_3.png"), class:"item-image"), "#"
+            = link_to (image_tag ("image_4.png"), class:"item-image"), "#"
+            = link_to (image_tag ("image_5.png"), class:"item-image"), "#"
+          
+           
         
   .pickup-container
     .pickup-container__title
       ピックアップブランド
-    .pickup-container__product
-      .pickup-container__product__head
-        アーカイバ
-      .pickup-container__product__item
+      .pickup-container__product
+        = link_to "アーカイバ", "#", class:"product__head"
+        .pickup-container__product__item
+
 .Banner
   .Banner__title
   .Banner__text

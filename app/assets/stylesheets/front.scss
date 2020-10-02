@@ -235,7 +235,8 @@
     }
   }
   .pickup-container{
-    height: 100%;
+    height: 430px;
+    width: 100%;
     padding-top: 80px;
     background-color: #f8f8f8;
     &__title{
@@ -245,26 +246,28 @@
      font-weight: bold;
     }
     &__product{
-      height: 310px;
-      &__head{
+      height: 50px;
+      width: 100%;
+      text-align: center;
+      .product__head{
         font-weight: bold;
         font-size: 24px;
-        text-align: center;
         text-decoration: none;
         color: #3CCACE;
       }
       &__item{
-        height: 310px;
-        width: 780px;
+        width: 100%;
         margin: 26px auto;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        align-items: center;
         background-color: skyblue;
+        .item-image{
+         height: 180px;
+         width: 200px;
+        }
       }
-      .item-image{
-        height: 180px;
-        width: 200px;
-      }
+      
     }
   }
  
