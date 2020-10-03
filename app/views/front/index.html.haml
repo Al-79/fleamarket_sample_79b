@@ -1,10 +1,9 @@
 .Body
-  .sell-btn
-    .sell-btn__text
-      出品する
-      = link_to (image_tag ("icon_camera.png"), class:"icon-btn"),"#"
-
-      
+  = link_to "#" do
+    .sell-btn
+      .sell-btn__text
+        出品する
+        = image_tag "icon_camera.png", class:"icon-btn"
   .main
     .main__content
       .main__content__title
@@ -86,26 +85,153 @@
       ピックアップカテゴリー
       .pickup-container__product
         = link_to "新規投稿商品", "#", class:"product__head"
-    
-      
         .pickup-container__product__item
-          .pickup-container__product__item__image
-            = link_to (image_tag ("image_1.jpeg"), class:"item-image"), "#"
-            .pickup-container__product__item__body
-              .pickup-container__product__item__text
-            = link_to (image_tag ("image_2.jpeg"), class:"item-image"), "#"
-            = link_to (image_tag ("image_3.png"), class:"item-image"), "#"
-            = link_to (image_tag ("image_4.png"), class:"item-image"), "#"
-            = link_to (image_tag ("image_5.png"), class:"item-image"), "#"
-          
-           
-        
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_6.jpeg", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  近江牛ステーキ
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        2,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_2.jpeg", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_3.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_4.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_5.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
   .pickup-container
     .pickup-container__title
       ピックアップブランド
       .pickup-container__product
         = link_to "アーカイバ", "#", class:"product__head"
         .pickup-container__product__item
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_1.jpeg", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_2.jpeg", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  炸醤麺
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_3.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  サバの味噌煮
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_4.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_5.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  ポークカレー
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
 
 .Banner
   .Banner__title
