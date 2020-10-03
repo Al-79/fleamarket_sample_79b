@@ -4,19 +4,25 @@
       %ul.mypage-sidebar__topics
         マイページ
         %li.mypage-sidebar__topic
-          出品する
+          = link_to "#", class: "mypage-sidebar__topic--btn" do
+            出品する
         %li.mypage-sidebar__topic
-          出品した商品
+          = link_to "#", class: "mypage-sidebar__topic--btn" do
+            出品した商品
         %li.mypage-sidebar__topic
-          購入した商品
+          = link_to "#", class: "mypage-sidebar__topic--btn" do
+            購入した商品
       %ul.mypage-sidebar__topics
         設定・ヘルプ
         %li.mypage-sidebar__topic
-          設定
+          = link_to "#", class: "mypage-sidebar__topic--btn" do
+            設定
         %li.mypage-sidebar__topic
-          お問い合わせ
+          = link_to "#", class: "mypage-sidebar__topic--btn" do
+            お問い合わせ
         %li.mypage-sidebar__topic
-          ログアウト
+          = link_to "#", class: "mypage-sidebar__topic--btn" do
+            ログアウト
     .mypage-contents  
       .mypage-contents__user
         %h1.mypage-contents__user--name ベンティ
