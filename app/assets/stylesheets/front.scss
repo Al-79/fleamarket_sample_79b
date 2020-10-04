@@ -1,7 +1,12 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+
 .Body{
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
   height: 100%;
-  width: 1440px;
   position: relative;
   .sell-btn{
     height: 90px;
@@ -30,6 +35,7 @@
   }
   .main{
     height: 560px;
+    text-align: center;
     background-image: url('bg-mainVisual-pict_pc.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -37,7 +43,6 @@
     vertical-align: bottom;
     padding: 0 60px;
     display: flex;
-    align-items: center;
     &__content{
       height: 340px;
       width: 750px;
@@ -316,7 +321,6 @@
 .Banner{
   background-image: url('bg-appBanner-pict.jpg');
   height: 150px;
-  width: 100%;
   padding: 100px 40px;
   background-size: cover;
   background-position: center;
