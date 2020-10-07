@@ -8,4 +8,78 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header.header
+      .header__inner
+        .header__main
+          %h1.header__icon
+            %a{:href => "/"}
+              %img{:src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
+          .header__searchbox
+            %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
+              %input{:name => "utf8", :type => "hidden", :value => "/"}/
+              %input#searchbox--main.header__searchbox--input{:name => "key", :placeholder => "キーワードから探す"}/
+              %button{:type => "submit"}
+                .header__searchbox--icon
+                  %img{:src => "http://furima.tokyo/assets/icon-search-60a83ada85216fe00789cd16065281694d9a08948275fef83683fadcf131d84d.svg"}/
+              %input{:name => "authenticity_token", :type => "hidden"}/
+              %input{:name => "authenticity_token", :type => "hidden", :value => "fL/kDm84U6L/BDximFzk7eGfs0OF98Q1Lo57NHT6d+TvjHW0dA6eDpx3DEK+t2Vtokn1zzuSszdfpkIuqm3eTg=="}/
+          %ul.resultLists
+        .header__nav
+          %ul.header__listsLeft
+            %li.header__listsLeft--item.header__listsLeft--item--first
+              %a#catBtn{:href => "/"} カテゴリー
+              .tree.displayNone
+                %ul.categoryTree
+                  %li.categoryTree--item
+                    %a#1{:href => "/"} レディース
+            %li.header__listsLeft--item
+              %a#brandBtn{:href => "/"} ブランド
+              %ul.brandsPulldown.displayNone
+          %ul.header__listsRight
+            %li.header__listsRight--item.header__listsRight--item--login
+              %a{:href => "/"} ログイン
+            %li.header__listsRight--item.header__listsRight--item--new
+              %a{:href => "/"} 新規会員登録
     = yield
+    .Banner
+      .Banner__box
+        .Banner__box__title
+          だれでもかんたん、人生を変えるフリマアプリ
+        .Banner__box__text
+          今すぐ無料ダウンロード！
+        .banner__content__btn
+          = link_to (image_tag ("app-store-logo.png"), class:"content-btn"), "#" 
+          = link_to (image_tag ("google-player.png") ,class: "content-btn"), "#"
+
+    %footer.footer
+      %ul.footer__contents
+        %li.footer__content
+          %h2.footer__content--head FURIMAについて
+          %ul
+            %li
+              %a{:href => "http://furima.tokyo/#"} 会社概要（運営会社）
+            %li
+              %a{:href => "http://furima.tokyo/#"} プライバシーポリシー
+            %li
+              %a{:href => "http://furima.tokyo/#"} FURIMA利用規約
+            %li
+              %a{:href => "http://furima.tokyo/#"} ポイントに関する特約
+        %li.footer__content
+          %h2.footer__content--head FURIMAを見る
+          %ul
+            %li
+              %a{:href => "/"} カテゴリー一覧
+            %li
+              %a{:href => "/"} ブランド一覧
+        %li.footer__content
+          %h2.footer__content--head ヘルプ＆ガイド
+          %ul
+            %li
+              %a{:href => "/"} FURIMAガイド
+            %li
+              %a{:href => "/"} FURIMAロゴ利用ガイドライン
+            %li
+              %a{:href => "/"} お知らせ
+      .footer__logo
+        %a{:href => "/"}
+      %p © FURIMA
