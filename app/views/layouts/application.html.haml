@@ -11,16 +11,16 @@
     %header.header
       .header__inner
         .header__main
-          %h1.header__icon
-            %a{:href => "/"}
-              %img{:src => "http://furima.tokyo/assets/logo-d3d78326971d78b06e3d6f0ba666d025a8ad681286b4d9e00e7dbe8673bcfd23.svg"}/
+          .header__icon
+            = link_to "/" do
+              = image_tag "logo.png"
           .header__searchbox
             %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
               %input{:name => "utf8", :type => "hidden", :value => "/"}/
               %input#searchbox--main.header__searchbox--input{:name => "key", :placeholder => "キーワードから探す"}/
               %button{:type => "submit"}
                 .header__searchbox--icon
-                  %img{:src => "http://furima.tokyo/assets/icon-search-60a83ada85216fe00789cd16065281694d9a08948275fef83683fadcf131d84d.svg"}/
+                  = image_tag "icon-search 1.png"
               %input{:name => "authenticity_token", :type => "hidden"}/
               %input{:name => "authenticity_token", :type => "hidden", :value => "fL/kDm84U6L/BDximFzk7eGfs0OF98Q1Lo57NHT6d+TvjHW0dA6eDpx3DEK+t2Vtokn1zzuSszdfpkIuqm3eTg=="}/
           %ul.resultLists
@@ -57,13 +57,13 @@
           %h2.footer__content--head FURIMAについて
           %ul
             %li
-              %a{:href => "http://furima.tokyo/#"} 会社概要（運営会社）
+              %a{:href => "/"} 会社概要（運営会社）
             %li
-              %a{:href => "http://furima.tokyo/#"} プライバシーポリシー
+              %a{:href => "/"} プライバシーポリシー
             %li
-              %a{:href => "http://furima.tokyo/#"} FURIMA利用規約
+              %a{:href => "/"} FURIMA利用規約
             %li
-              %a{:href => "http://furima.tokyo/#"} ポイントに関する特約
+              %a{:href => "/"} ポイントに関する特約
         %li.footer__content
           %h2.footer__content--head FURIMAを見る
           %ul
@@ -80,6 +80,7 @@
               %a{:href => "/"} FURIMAロゴ利用ガイドライン
             %li
               %a{:href => "/"} お知らせ
-      .footer__logo
-        %a{:href => "/"}
+      = link_to "/" do
+        .footer__logo
+          = image_tag "logo-white.png"
       %p © FURIMA

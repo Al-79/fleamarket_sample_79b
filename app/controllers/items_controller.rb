@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
     Item.create(item_params)
   end
 
@@ -18,7 +17,6 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:name, :introduction)
+    params.require(:item).permit(:name, :introduction, :price, :category_id, :brand_id, :size_id, :condition_id, :preparation_day_id, :postage_payer_id, :prefecture_id)
   end
-
 end
