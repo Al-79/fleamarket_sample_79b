@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'items/index'
+  get 'listings/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # after
-  root 'front#index'
+  root 'listings#index'
 end
