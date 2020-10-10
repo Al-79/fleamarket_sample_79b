@@ -1,0 +1,48 @@
+.sing-content{
+  background-color:white;
+  text-align: center;
+  color: black;
+}
+.registration-new{
+  &__wrapper{
+   &__nav{
+    font-size: 18px;
+    text-align: center;
+    padding: 16px;
+    font-weight: bold;
+    border-bottom: solid 1px;
+    border-color: whitesmoke;
+    }
+  }
+}
+
+.form-require{
+  background-color: #3ccace;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: white;
+  font-size: 12px;
+  width: 32px;
+  height: 19px;
+}
+
+.profile-group__require{
+  background-color: #3ccace;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: white;
+  font-size: 12px;
+  width: 32px;
+  height: 19px;
+}
+
+.profile-btn{
+  background-color: #3ccace;
+  color: white;
+}
+.profile-main__content__title{
+  color: black;
+  font-size: 14px;
+}
