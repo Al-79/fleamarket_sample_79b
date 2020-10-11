@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin:90px 40px 50px 0;
+  margin:70px 40px 50px 0;
   background-color: #fff;
 }
 
@@ -12,11 +12,12 @@
   padding-bottom: 30px;
   text-align: center;
   background-color: #fff;
+  margin-top: 30px;
 }
 
 .credit-containar{
   text-align: left;
-  width: 40%;
+  width: 45%;
   height: 500px;
   margin: auto;
   font-size: 18px;
@@ -25,8 +26,9 @@
 
 .credit-namber{
   margin-bottom: 40px;
+  margin-top: 30px;
   &__area{
-    width: 98%;
+    width: 100%;
     height: 40px;
     margin-top: 10px;
   }
@@ -35,7 +37,7 @@
 .credit-expiration{
   margin-bottom: 10px;
   &__area{
-    width: 98%;
+    width: 100%;
     height: 40px;
     margin-top: 10px;
     &--month{

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'card/new'
-  get 'card/show'
   get 'mypages/index'
   devise_for :users
   get 'items/index'
