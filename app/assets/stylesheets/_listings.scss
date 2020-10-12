@@ -1,84 +1,182 @@
-.credit-main{
-  width: 75%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin:90px 40px 50px 0;
-  background-color: #fff;
+.listing-main{
+  background-color: rgb(241, 236, 236);
 }
 
-.credit-heading{
+.listing-containar{
+  text-align: left;
+  width: 50%;
+  padding: 40px;
+  margin: auto;
+  font-size: 18px;
+}
+.listing-header{
   border-bottom: 1px solid rgb(235, 230, 230);
   padding-bottom: 30px;
   text-align: center;
+}
+.header-btn{
+  width: 200px;
+  margin-top: 30px;
+}
+.listing-body{
   background-color: #fff;
+  padding: 40px;
 }
-
-.credit-containar{
-  text-align: left;
-  width: 40%;
-  height: 500px;
-  margin: auto;
-  font-size: 18px;
-
-}
-
-.credit-namber{
+.listing-image{
+  padding-bottom: 40px;
+  padding-left: 20px;
   margin-bottom: 40px;
-  &__area{
-    width: 98%;
-    height: 40px;
-    margin-top: 10px;
+  border-bottom: 1px solid rgb(191, 186, 186);
+  &__sub-tittle{
+    color: rgb(63, 62, 62);
+    font-weight: 100;
+    margin-top:15px ;
   }
 }
-
-.credit-expiration{
-  margin-bottom: 10px;
-  &__area{
-    width: 98%;
-    height: 40px;
-    margin-top: 10px;
-    &--month{
-      width: 40%;
+.input-area{
+  width: 95%;
+  height: 180px;
+  background-color: rgb(235, 232, 232);
+  border-radius: 5px;
+  position: relative;
+}
+.listing-camera {
+  position: absolute;
+  top: 80px;
+  right: 320px
+}
+.listing-item{
+  padding-left: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgb(155, 154, 154);
+  &__tittle{
+    &--area{
+      width: 95%;
       height: 40px;
-      margin-right: 10px;
-
+      margin-top: 10px;
+      border-radius: 5px;
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-bottom: 30px;
     }
-    &--year{
-      width: 40%;
-      height: 40px;
-      margin-right: 10px;
+    &--space{
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 95%;
+      height: 150px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+  &__introduct{
+    margin-top: 30px;
 
+  }
+  }
+}
+.listing-show{
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgb(155, 154, 154);
+  padding-left: 20px;
+  padding-bottom: 40px;
+  &__brand{
+    &--area{
+      width: 95%;
+      height: 40px;
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-bottom: 35px;
+    }
+  }
+  &__area{
+    &--category{
+      width: 95%;
+      height: 40px;
+      margin-top: 5px;
+      border-radius: 5px;
+      margin-bottom: 10px;
     }
   }
 }
-
-.credit-security{
-  margin-bottom: 20px;
+.listing-delivery{
+  padding-left: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgb(155, 154, 154);
+  &__show{
+    color: rgb(63, 62, 62);
+    font-weight: 100;
+    margin-bottom: 10px;
+  }
   &__area{
-    width: 98%;
+    margin-top: 5px;
+    &--category{
+      width: 95%;
+      height: 40px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  }
+}
+.listing-price{
+  padding-left: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgb(155, 154, 154);
+  &__area{
+    width: 45%;
     height: 40px;
     margin-top: 10px;
-    margin-bottom: 30px;
+    border-radius: 5px;
+  }
+  &__description{
+    color: rgb(63, 62, 62);
+    font-weight: 100;
+    margin-bottom: 1px;
+
+  }
+  &__enn{
+    height: 50px;
+    margin-right: 10px;
+    margin-left: 180px;
+    font-weight: 100;
+  }
+  &__fee{
+    color: rgb(63, 62, 62);
+    font-weight: 100;
+    margin-top: 35px;
   }
 }
-
-.credit_submit{
+.listing_submit{
   border-radius: 3px;
   display: block;
-  width: 100%;
-  height: 40px;
+  width: 60%;
+  height: 50px;
   margin: 20px auto;
   color: #fff;
   background-color: #3ccace;
+  border-radius: 5px;
 }
-
-.credit-contents{
-  font-weight: 700;
+.draft_submit{
+  border-radius: 3px;
+  display: block;
+  width: 60%;
+  height: 50px;
+  margin: 20px auto;
+  color: #fff;
+  background-color: gray;
+  border-radius: 5px;
 }
-
 .Mandatory{
   background-color: #3ccace;
+  border-radius: 3px;
+  color: #fff;
+  padding: 2px 4px;
+  margin-left: 5px;
+}
+.Any{
+  background-color: gray;
   border-radius: 3px;
   color: #fff;
   padding: 2px 4px;

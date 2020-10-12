@@ -1,27 +1,30 @@
 .listing-main
   .listing-containar
     .listing-header
-
+      = link_to (image_tag ("logo.png"), class:"header-btn"), "#" 
     .listing-body
-      = form_tag("#", method: :post, id: 'charge-form',  name: "inputForm") do
+      = form_with url: "#" do |form|
         .listing-image
           %label.listing-image__tittle 出品画像
           %label.Mandatory 必須
           %br
-          %label.listing-image__sub-tittle 最大10枚までアップロードできます
+          .listing-image__sub-tittle 最大10枚までアップロードできます
           %br
-          = text_field_tag "number", "", class: "credit-namber__area", placeholder: "  半角数字のみ" ,maxlength: "16", type: "text"
-          %br
+          = form.fields_for :images do |i|
+            .input-area
+              = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+              %label.listing-camera{for: "img-file"}
+                %i.fas.fa-camera          
         .listing-item
           %label.listing-item__tittle 商品名
           %label.Mandatory 必須
           %br
-          = text_field_tag "number", "", class: "listing-item__tittle--area", placeholder: "  40文字まで" ,maxlength: "40", type: "intager"
+          = form.text_field :name , class: "listing-item__tittle--area", placeholder: "  40文字まで" ,maxlength: "40"
           %br
           %label.listing-item__introduct 商品の説明
           %label.Mandatory 必須
           %br
-          = text_field_tag "number", "", class: "listing-item__introduct--area", placeholder: "  40文字まで" ,maxlength: "40", type: "intager"
+          = form.text_area :introduction, class: "listing-item__tittle--space", placeholder: "  商品の説明（必須 1000文字以内）\n （色、素材、重さ、定価、注意点など）\n\n  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありませ\n  ん。あわせやすいのでおすすめです。" ,maxlength: "40"
           %br
         .listing-show
           %label.listing-show__category  カテゴリー
@@ -37,16 +40,26 @@
               %option{value: "本・音楽・ゲーム"}本・音楽・ゲーム
               %option{value: "おもちゃ・ホビー・グッズ"}おもちゃ・ホビー・グッズ
           %br
-          %label.listing-show__burand ブランド
+          %label.listing-show__brand ブランド
           %label.Any 任意
           %br
-          = text_field_tag "number", "", class: "credit-expiration__burand--area", placeholder: "  例) シャネル" , type: "text"
+          = form.text_field :brand_id, class: "listing-show__brand--area", placeholder: "  例) シャネル"
+          %br
+          %label.listing-show__size  サイズ
+          %label.Any 任意
+          %br
+          .listing-show__area
+            %select.listing-show__area--category{name: "condition", type: "text"}
+              %option{value: ""} 選択してください
+              %option{value: "S"} S
+              %option{value: "M"} M
+              %option{value: "L"} L
           %br
           %label.listing-show__condition  商品の状態
           %label.Mandatory 必須
           %br
           .listing-show__area
-            %select.listing-show__area--condition{name: "condition", type: "text"}
+            %select.listing-show__area--category{name: "condition", type: "text"}
               %option{value: ""} 選択してください
               %option{value: "新品、未使用"}新品、未使用
               %option{value: "未使用に近い"}未使用に近い
@@ -56,22 +69,22 @@
               %option{value: "全体的に状態が悪い"}全体的に状態が悪い
           %br
         .listing-delivery                    
-          %label.credit-contents 配送について
+          .listing-delivery__show 配送について
           %br
-          %label.credit-contents 配送料の負担
+          %label.listing-delivery__burden 配送料の負担
           %label.Mandatory 必須
           %br
-          .listing-show__area
-            %select.listing-show__area--category{name: "category", type: "text"}
+          .listing-delivery__area
+            %select.listing-delivery__area--category{name: "category", type: "text"}
               %option{value: ""} 選択して下さい
               %option{value: "送料込み(出品者負担)"}送料込み(出品者負担)
               %option{value: "着払い(購入者負担)"}着払い(購入者負担)
           %br
-          %label.credit-contents 発送元の地域
+          %label.listing-delivery__prefectures 発送元の地域
           %label.Mandatory 必須
           %br
-          .listing-show__area
-            %select.listing-show__area--category{name: "category", type: "text"}
+          .listing-delivery__area
+            %select.listing-delivery__area--category{name: "category", type: "text"}
               %option{value: ""} 選択して下さい
               %option{value: "レディース"}レディース
               %option{value: "メンズ"}メンズ
@@ -80,23 +93,24 @@
               %option{value: "本・音楽・ゲーム"}本・音楽・ゲーム
               %option{value: "おもちゃ・ホビー・グッズ"}おもちゃ・ホビー・グッズ
           %br 
-          %label.credit-contents 発送までの日数
+          %label.listing-delivery__day 発送までの日数
           %label.Mandatory 必須
           %br
-          .listing-show__area
-            %select.listing-show__area--category{name: "category", type: "text"}
+          .listing-delivery__area
+            %select.listing-delivery__area--category{name: "category", type: "text"}
               %option{value: ""} 選択して下さい
               %option{value: "レディース"}1〜2で発送
               %option{value: "メンズ"}2〜3で発送
               %option{value: "ベビー・キッズ"}4〜7で発送
         .listing-price
-          %label.listing-price__description 価格(¥300〜9,9999,999)
+          .listing-price__description 価格(¥300〜9,9999,999)
+          %br
           %label.listing-price__tittle 販売価格
           %label.Mandatory 必須
-          %span ¥
+          %span.listing-price__enn ¥
+          = form.text_field :price , class: "listing-price__area" ,placeholder: "                                         0"
           %br
-          %label.listing-price__fee 販売手数料 (10%)
-          = text_field_tag "number", "", class: "listing-item__tittle--area" ,maxlength: "40"
+          .listing-price__fee 販売手数料 (10%)
         .Listing-form
-          = submit_tag "出品する", class: "listning_submit"
-          = submit_tag "下書きに保存", class: "draft_submit"
+          = form.submit "出品する", class: "listing_submit"
+          = form.submit "下書きに保存", class: "draft_submit"
