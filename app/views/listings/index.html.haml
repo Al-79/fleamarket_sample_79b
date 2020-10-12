@@ -14,7 +14,12 @@
             .input-area
               = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
               %label.listing-camera{for: "img-file"}
-                %i.fas.fa-camera          
+                %i.fas.fa-camera
+                %br
+              .listing-introduct
+                %label ドラックアンドドロップ
+                %br
+                %label またはクリックしてファイルをアップロード
         .listing-item
           %label.listing-item__tittle 商品名
           %label.Mandatory 必須

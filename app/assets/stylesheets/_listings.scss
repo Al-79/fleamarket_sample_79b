@@ -40,10 +40,21 @@
   border-radius: 5px;
   position: relative;
 }
+.input-area:hover{
+  border: 1px solid #3ccace;}
 .listing-camera {
   position: absolute;
-  top: 80px;
+  top: 60px;
   right: 320px
+}
+.listing-introduct{
+  position: absolute;
+  top: 100px;
+  right: 210px;
+  font-size: 12px;
+  color: rgb(63, 62, 62);
+  font-weight: 100;
+  text-align: center;
 }
 .listing-item{
   padding-left: 20px;
