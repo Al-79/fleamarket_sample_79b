@@ -7,17 +7,17 @@
         .registrations-new__wrapper__form__set
           = form_with model: @user, url: user_registration_path, local: true do |f|
             = render "devise/shared/error_messages", resource: @user
-            .registrations-new__wrapper__form__set__nickname
+            .registrations-new__wrapper__form__set__information
               ニックネーム
               %span.form-require 必須
               %br/
               = f.text_field :nickname, placeholder: '例）hurima'
-            .registrations-new__wrapper__form__set__email
+            .registrations-new__wrapper__form__set__information
               メールアドレス
               %span.form-require 必須
               %br/
               = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
-            .registrations-new__wrapper__form__set__password
+            .registrations-new__wrapper__form__set__information
               パスワード
               %span.form-require 必須
               %br/

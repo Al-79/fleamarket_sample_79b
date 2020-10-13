@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  padding: 50px 0;
 }
 .registrations-new{
   width: 40%;
@@ -29,29 +29,16 @@
   }
 }
 .registrations-new__wrapper__form__set{
-    &__nickname{
+    &__information{
       margin-bottom: 27px;
       margin-left: auto;
       margin-right: auto;
       display: block;
-      height: 50px;    
+      height: 50px; 
     }
-    &__email{
-      margin-bottom: 27px;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      height: 50px;
-    }
+    
     &__passwordconfirmation{
       margin-top: 50px;
-    }
-    &__password{
-      margin-bottom: 27px;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      height: 50px;
     }
 }
 .form-require{
@@ -100,47 +87,58 @@
 
 #user_nickname{
   width: 250px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 
 #user_email{
   width: 250px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 
 #user_password{
   width: 250px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 #user_password_confirmation{
   width: 250px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 #user_family_name{
   width: 125px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 #user_first_name{
   width: 125px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 #user_family_name_kana{
   width: 125px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 #user_first_name_kana{
   width: 125px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 #user_birth_date_1i{
   width: 80px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 #user_birth_date_2i{
   width: 80px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
 #user_birth_date_3i{
   width: 80px;
-  height: 50px;
+  height: 30px;
+  font-size: 13px;
 }
