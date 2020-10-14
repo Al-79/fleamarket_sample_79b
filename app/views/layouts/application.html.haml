@@ -15,23 +15,21 @@
             = link_to "/" do
               = image_tag "logo.png"
           .header__searchbox
-            %form{"accept-charset" => "UTF-8", :action => "#", :method => "get"}
-              %input{:name => "utf8", :type => "hidden", :value => "/"}/
-              %input#searchbox--main.header__searchbox--input{:name => "key", :placeholder => "キーワードから探す"}/
-              %button{:type => "submit"}
-                .header__searchbox--icon
+            = form_with(model: @item, local: true) do |form|
+              = form.text_field :name, placeholder: "キーワードから探す", class:"header__searchbox--input"
+              .header__searchbox--icon
+                = button_tag type: :submit do
                   = image_tag "icon-search 1.png"
-              %input{:name => "authenticity_token", :type => "hidden"}/
-              %input{:name => "authenticity_token", :type => "hidden", :value => "fL/kDm84U6L/BDximFzk7eGfs0OF98Q1Lo57NHT6d+TvjHW0dA6eDpx3DEK+t2Vtokn1zzuSszdfpkIuqm3eTg=="}/
           %ul.resultLists
         .header__nav
           %ul.header__listsLeft
             %li.header__listsLeft--item.header__listsLeft--item--first
-              %a#catBtn{:href => "/"} カテゴリー
-              .tree.displayNone
-                %ul.categoryTree
-                  %li.categoryTree--item
-                    %a#1{:href => "/"} レディース
+              %label{:for => "menu_bar01"} カテゴリー
+              %input#menu_bar01.accordion{:type => "checkbox"}/
+              %a#catBtn{:href => "/"} 
+              %ul.categoryTree#links01
+                %li.categoryTree--item
+                  %a#1{:href => "/"} レディース
             %li.header__listsLeft--item
               %a#brandBtn{:href => "/"} ブランド
               %ul.brandsPulldown.displayNone
