@@ -24,13 +24,19 @@
         .header__nav
           %ul.header__listsLeft
             %li.header__listsLeft--item.header__listsLeft--item--first
-              %label{:for => "menu_bar01"} カテゴリー
-              %input#menu_bar01.accordion{:type => "checkbox"}/
-              %a#catBtn{:href => "/"} 
+              .category
+                %a#catBtn{:href => "/"} カテゴリー　　
               %ul.categoryTree#links01
                 %li.categoryTree--item
                   %a#1{:href => "/"} レディース
+                %li.categoryTree--item
+                  %a#1{:href => "/"} メンズ
+                %li.categoryTree--item
+                  %a#1{:href => "/"} ベビー・キッズ
+                %li.categoryTree--item
+                  %a#1{:href => "/"} その他
             %li.header__listsLeft--item
+              .brand
               %a#brandBtn{:href => "/"} ブランド
               %ul.brandsPulldown.displayNone
           %ul.header__listsRight

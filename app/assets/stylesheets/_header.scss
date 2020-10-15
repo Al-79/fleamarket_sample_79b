@@ -1,5 +1,5 @@
 .header {
-  height: 160px;
+  height: 130px;
   width: calc(100vw - 15px);
   padding: 0 60px;
   &__inner{
@@ -57,6 +57,7 @@
     display: flex;
     list-style: none;
     &--item a{
+      
       color: #333;
       text-decoration: none;
       line-height: 32px;
@@ -65,12 +66,14 @@
       background-size: 18px;
       padding-right: 30px;
       &--first{
+
         text-decoration: none;
         padding: 0;
       }
     }
     &--item li{
-      height: 0;
+
+      // height: 0;
       overflow: hidden;
       -webkit-transition: all 0.5s;
       -moz-transition: all 0.5s;
@@ -189,4 +192,22 @@
   height: 306px;
   width: 306px;
   margin: 16px 5% 0 0;
+}
+.categoryTree{
+  display: none;
+}
+// .category:hover{
+//   color: red;
+//   .categoryTree{
+//     display: none;
+//   }
+// }
+.header__listsLeft--item.header__listsLeft--item--first{
+  z-index: 1;
+}
+.header__listsLeft--item.header__listsLeft--item--first:hover{
+  .categoryTree{
+    display: block;
+    background-color: white;
+  }
 }
