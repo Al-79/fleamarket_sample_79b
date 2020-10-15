@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :card, only: [:new, :show]
 
-  root 'mypages#index'
+  root 'front#index'
 
 end
