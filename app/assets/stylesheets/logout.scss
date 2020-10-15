@@ -43,7 +43,7 @@ $color-furima: #3ccace;
     }
 }
 .form-require{
-  background-color: #3ccace;
+  background-color: $color-furima;
   margin: 0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
@@ -59,7 +59,7 @@ $color-furima: #3ccace;
   display: block;
   height: 50px;
   &__require{
-    background-color: #3ccace;
+    background-color: $color-furima;
     margin: 0 0 0 8px;
     padding: 2px 4px;
     border-radius: 2px;
@@ -74,7 +74,7 @@ $color-furima: #3ccace;
 
 
 .profile-btn{
-  background-color: #3ccace;
+  background-color: $color-furima;
   color: white;
   margin: 50px;
   width: 250px;
