@@ -1,3 +1,4 @@
+$color-furima: #3ccace;
 .sessions-new{
   background-color:#f5f5f5;
   padding-top: 27px;
@@ -22,24 +23,37 @@
         font-size: 14px;
       }
       &__button{
-        background-color: #3ccace;
+        background-color: $color-furima;
         border: none;
         height: 43px;
+        width: 300px;
         color: white;
         line-height: 40px;
+        margin-left:42px;
+
+      
         &__form.field{
           width: 90%;
           margin: auto;
+          
         }
+        
       }
       
     }
     &__form{
       margin: 24px;
       padding-bottom: 24px;
-      
+      .space{
+        margin-top: 35px;
+        font-size: 14px;
+      }
+      .field{
+        font-size: 20px;
+        text-align: center;
+      }
       input{
-        width: 85%;
+        width: 185px;
         height: 48px;
         margin-left: auto;
         margin-right: auto;
@@ -49,16 +63,18 @@
       }
       .actions--red{
         input{
-        background-color: #3ccace;
+        background-color: $color-furima;;
         color: white;
         border: none;
         cursor: pointer;
-        width: 85%;
+        width: 70%;
 
         }
       }
       
     }
   }
+
+ 
 }
 

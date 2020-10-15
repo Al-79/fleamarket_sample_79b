@@ -11,11 +11,12 @@
         .field
           = f.label :email
           %br/
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス'
-        .field
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス', class: "addless-box"
+        
+        .field.space
           = f.label :password
           %br/
-          = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード'
+          = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード', class: "pass-box"
         - if devise_mapping.rememberable?
           .sessions-new__wrapper__form 
         .actions--red
