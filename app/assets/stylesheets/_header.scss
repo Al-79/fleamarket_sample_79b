@@ -56,8 +56,10 @@
     position: relative;
     display: flex;
     list-style: none;
+    .tree{
+      display: flex
+    }
     &--item a{
-      
       color: #333;
       text-decoration: none;
       line-height: 32px;
@@ -66,13 +68,11 @@
       background-size: 18px;
       padding-right: 30px;
       &--first{
-
         text-decoration: none;
         padding: 0;
       }
     }
     &--item li{
-
       // height: 0;
       overflow: hidden;
       -webkit-transition: all 0.5s;
@@ -80,11 +80,6 @@
       -ms-transition: all 0.5s;
       -o-transition: all 0.5s;
       transition: all 0.5s;
-    }
-    #menu_bar01:checked ~ #links01 li,
-    #menu_bar02:checked ~ #links02 li {
-        height: 54px;
-        opacity: 1;
     }
     label {
       cursor :pointer;
@@ -196,18 +191,40 @@
 .categoryTree{
   display: none;
 }
-// .category:hover{
-//   color: red;
-//   .categoryTree{
-//     display: none;
-//   }
-// }
+
+.subcatTree{
+  display: none;
+}
+
+.itemTree{
+  display: none;
+}
+
 .header__listsLeft--item.header__listsLeft--item--first{
   z-index: 1;
+  overflow: hidden;
 }
 .header__listsLeft--item.header__listsLeft--item--first:hover{
+  .category a{
+    color: orange;
+  }
   .categoryTree{
     display: block;
     background-color: white;
   }
+  .categoryTree--item{
+    border-bottom: 1px solid #EEEEEE;
+  }
+
+}
+.categoryTree li a:hover{
+  color: orange;
+  + .subcatTree {
+    background-color: white;
+    display: block;
+  }
+}
+
+.categoryTree li a:hover .subcatTree{
+  display: block;
 }

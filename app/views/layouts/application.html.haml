@@ -22,24 +22,31 @@
                   = image_tag "icon-search 1.png"
           %ul.resultLists
         .header__nav
-          %ul.header__listsLeft
-            %li.header__listsLeft--item.header__listsLeft--item--first
+          .header__listsLeft
+            .header__listsLeft--item.header__listsLeft--item--first
               .category
-                %a#catBtn{:href => "/"} カテゴリー　　
-              %ul.categoryTree#links01
-                %li.categoryTree--item
-                  %a#1{:href => "/"} レディース
-                %li.categoryTree--item
-                  %a#1{:href => "/"} メンズ
-                %li.categoryTree--item
-                  %a#1{:href => "/"} ベビー・キッズ
-                %li.categoryTree--item
-                  %a#1{:href => "/"} その他
-            %li.header__listsLeft--item
+                %a#catBtn{:href => "/"} カテゴリー
+              .tree
+                %ul.categoryTree
+                  %li.categoryTree--item#No1
+                    %a#1{:href => "/"}
+                      レディース
+                      %ul.subcatTree
+                        %li.categoryTree--item
+                          %a#1{:href => "/"} トップス
+                        %li.categoryTree--item
+                          %a#1{:href => "/"} ジャケット/アウター
+                  %li.categoryTree--item#No2
+                    %a#1{:href => "/"} メンズ
+                  %li.categoryTree--item
+                    %a#1{:href => "/"} ベビー・キッズ
+                  %li.categoryTree--item
+                    %a#1{:href => "/"} その他
+            .header__listsLeft--item
               .brand
               %a#brandBtn{:href => "/"} ブランド
               %ul.brandsPulldown.displayNone
-          %ul.header__listsRight
+          .header__listsRight
             %li.header__listsRight--item.header__listsRight--item--login
               %a{:href => "/"} ログイン
             %li.header__listsRight--item.header__listsRight--item--new
