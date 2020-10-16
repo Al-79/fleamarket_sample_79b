@@ -1,0 +1,241 @@
+.Body
+  = link_to "#" do
+    = render 'camera-icon'
+  .main
+    .main__content
+      .main__content__title
+        人生を変えるフリマアプリ
+      .main__content__sub
+        FURIMAはだれでも簡単に出品・購入できる
+        %div フリマアプリです
+      .main__content__btn
+        = link_to (image_tag ("app-store-logo.png"), class:"content-btn"), "#" 
+        = link_to (image_tag ("google-player.png") ,class: "content-btn"), "#"
+  .introduction
+    .introduction__title
+      FURIMAが選ばれる3つの理由
+    .introduction__lists 
+      .introduction__lists__list
+        = image_tag "pict-reason-01.jpg", size:"306x306"
+        %p 1
+        .introduction__lists__text
+          %span 3分
+          ですぐに出品
+        .introduction__lists__sub
+          スマホで入力するだけで簡単に出品できる！
+
+      .introduction__lists__list
+        = image_tag "pict-reason-02.jpg", size:"306x306"
+        %p 2
+        .introduction__lists__text
+          %span シンプル
+          で使いやすい
+        .introduction__lists__sub
+          めんどうくさい入力は必要なく、検索も購入もスムーズ！
+
+      .introduction__lists__list
+        = image_tag "pict-reason-03.jpg", size:"306x306"
+        %p 3
+        .introduction__lists__text
+          手数料
+          %span 業界最安
+        .introduction__lists__sub-right
+          最大3%でお得に出品&購入！
+
+  .middle
+    .middle__content
+      .middle__content__title
+        会員数日本一位
+      .middle__content__sub
+        %div FURIMAは、フリマアプリで最も人気
+        %div 出品・購入回数も業界最多です！
+        %div ほしかったあの商品に出会えるかもしれません。
+      .main__content__btn
+        = link_to (image_tag ("app-store-logo.png"), class:"content-btn"), "#" 
+        = link_to (image_tag ("google-player.png") ,class: "content-btn"), "#"
+  .features
+    .features__title
+      FURIMAの特徴
+    .features__lists 
+      .features__lists__list
+        = image_tag "icon-01.png", size:"220x337", class:"features-image"
+        .features__lists__text
+          簡単に売り買いできる
+        .features__lists__sub
+          スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+
+      .features__lists__list
+        = image_tag "icon-02.png", size:"220x337", class:"features-image"
+        .features__lists__text
+          売上金は即日振込みに対応
+        .features__lists__sub
+          午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+
+      .features__lists__list
+        = image_tag "icon-03.png", size:"220x337", class:"features-image"
+        .features__lists__text
+          様々な支払いに対応
+        .features__lists__sub
+          お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
+  .pickup-container
+    .pickup-container__title
+      ピックアップカテゴリー
+      .pickup-container__product
+        = link_to "新規投稿商品", "#", class:"product__head"
+        .pickup-container__product__item
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_6.jpeg", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  近江牛ステーキ
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        2,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_2.jpeg", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_3.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_4.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_5.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+  .pickup-container
+    .pickup-container__title
+      ピックアップブランド
+      .pickup-container__product
+        = link_to "アーカイバ", "#", class:"product__head"
+        .pickup-container__product__item
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_1.jpeg", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_2.jpeg", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  炸醤麺
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_3.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  サバの味噌煮
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_4.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  テキスト
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+          = link_to "#" do
+            .pickup-container__product__item__image
+              = image_tag "image_5.png", class:"item-image"
+              .pickup-container__product__item__body
+                .pickup-container__product__item__body__title
+                  ポークカレー
+                  .pickup-container__product__item__body__text
+                    %ul 
+                      %li
+                        1,000円
+                      %li
+                        ★ 1
+                  .pickup-container__product__item__body__tax
+                    (税込)
+
+.Banner
+  .Banner__box
+    .Banner__box__title
+      だれでもかんたん、人生を変えるフリマアプリ
+    .Banner__box__text
+      今すぐ無料ダウンロード！
+    .banner__content__btn
+      = link_to (image_tag ("app-store-logo.png"), class:"content-btn"), "#" 
+      = link_to (image_tag ("google-player.png") ,class: "content-btn"), "#"
