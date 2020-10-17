@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+
   belongs_to :category
   belongs_to :brand
   has_many :item_images, dependent: :destroy
