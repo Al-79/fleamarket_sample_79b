@@ -26,11 +26,17 @@ $color-furima: #3ccace;
       }
       &__button{
         background-color: $color-furima;
+        color: white;
         border: none;
+        position: relative;
         height: 43px;
         width: 300px;
+        text-align: center;
         line-height: 40px;
-        margin-left:42px;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 50px;
+        
           &__sign {
             color: white;
             text-decoration: none;

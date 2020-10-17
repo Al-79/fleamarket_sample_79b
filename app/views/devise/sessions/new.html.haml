@@ -3,8 +3,10 @@
     .sessions-new__wrapper__registrations
       .sessions-new__wrapper__registrations__nav
         アカウントをお持ちでない方はこちら
-      .sessions-new__wrapper__registrations__button  
-        = link_to "新規会員登録" , '#',class: 'sessions-new__wrapper__registrations__button__sign'
+    = link_to "#" ,class: "sessions-new__wrapper__registrations__button__sign" do
+      .sessions-new__wrapper__registrations__button
+         
+        新規会員登録
         
     .sessions-new__wrapper__form
       = form_with model: @user, url: session_path(resource_name), local: true do |f|
