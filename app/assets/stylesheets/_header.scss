@@ -204,6 +204,32 @@
   z-index: 1;
   overflow: hidden;
 }
+// カテゴリー、ブランドの位置固定
+.header__listsLeft{
+  position: relative;
+}
+
+.header__listsLeft--item.header__listsLeft--item--first{
+  position: absolute;
+  left: 0px;
+  width: 1000px;
+}
+
+.header__listsLeft--item{
+  position: absolute;
+  left: 100px;
+  width: 1000px;
+}
+
+.categoryTree--item{
+  position: relative;
+}
+
+.categoryTree--item{
+  position: relative;
+}
+
+
 .header__listsLeft--item.header__listsLeft--item--first:hover{
   .category a{
     color: orange;
@@ -221,7 +247,6 @@
   color: orange;
   + .subcatTree {
     background-color: white;
-    display: block;
   }
 }
 
