@@ -1,7 +1,7 @@
 .listing-main
   .listing-containar
     .listing-header
-      = link_to (image_tag ("logo.png"), class:"header-btn"), "#" 
+      = link_to (image_tag ("logo.png"), class:"header-icon"), "#" 
     .listing-body
       = form_with url: "#" do |form|
         .listing-image
@@ -10,16 +10,16 @@
           %br
           .listing-image__sub-tittle 最大10枚までアップロードできます
           %br
-          = form.fields_for :images do |i|
-            .input-area
-              = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
-              %label.listing-camera{for: "img-file"}
+          = form.fields_for :items do |i|
+            = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+            %label.listing-camera{for: "img-file"}
+              .input-area
                 %i.fas.fa-camera
                 %br
-              .listing-introduct
-                %label ドラックアンドドロップ
-                %br
-                %label またはクリックしてファイルをアップロード
+                .listing-introduct
+                  %label ドラックアンドドロップ
+                  %br
+                  %label またはクリックしてファイルをアップロード
         .listing-item
           %label.listing-item__tittle 商品名
           %label.Mandatory 必須
@@ -112,11 +112,13 @@
         .listing-price
           .listing-price__description 価格(¥300〜9,9999,999)
           %br
-          %label.listing-price__tittle 販売価格
-          %label.Mandatory 必須
-          %span.listing-price__enn ¥
-          = form.text_field :price , class: "listing-price__area" ,placeholder: "                                         0"
-          %br
+          .listing-price__show
+            .listing-price__show--notation
+              %label 販売価格
+              %label.Mandatory 必須
+              %span.enn ¥
+            = form.text_field :price , class: "listing-price__show--area" ,placeholder: "0    "
+            %br
           .listing-price__fee 販売手数料 (10%)
         .Listing-form
           = form.submit "出品する", class: "listing_submit"
