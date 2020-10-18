@@ -8,7 +8,11 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.create(item_params)
+    @item = Item.create(item_params)
+    if @item.save
+    else
+      render :new
+    end
   end
 
   def show
