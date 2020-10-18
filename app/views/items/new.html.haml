@@ -1,0 +1,4 @@
+= form_with(model: @item, local: true) do |form|
+  = form.text_field :name, placeholder: "name", value: "test"
+  = form.text_field :introduction, placeholder: "introduction", value: "test"
+  = form.submit "SEND"
