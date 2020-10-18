@@ -1,4 +1,5 @@
 $color-furima: #3ccace;
+
 .sign-content{
   background-color:#f5f5f5;
   text-align: center;
@@ -10,38 +11,37 @@ $color-furima: #3ccace;
   align-items: center;
   padding: 50px 0;
 }
+
 .registrations-new{
   width: 40%;
   height: 90%;
   background-color: white;
   padding-top: 30px;
   padding-bottom: 30px;
-  
   &__wrapper{
-   &__nav{
-    font-size: 18px;
-    text-align: center;
-    padding: 16px;
-    font-weight: bold;
-    border-bottom: solid 1px;
-    border-color: whitesmoke;
-    
+    &__form__set{
+      &__information{
+        margin-bottom: 27px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        height: 50px; 
+      }
+      &__passwordconfirmation{
+        margin-top: 50px;
+      }
+    }
+    &__nav{
+      font-size: 18px;
+      text-align: center;
+      padding: 16px;
+      font-weight: bold;
+      border-bottom: solid 1px;
+      border-color: whitesmoke;
     }
   }
 }
-.registrations-new__wrapper__form__set{
-    &__information{
-      margin-bottom: 27px;
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      height: 50px; 
-    }
-    
-    &__passwordconfirmation{
-      margin-top: 50px;
-    }
-}
+
 .form-require{
   background-color: $color-furima;
   margin: 0 0 0 8px;
@@ -52,6 +52,7 @@ $color-furima: #3ccace;
   width: 32px;
   height: 19px;
 }
+
 .profile-group{
   margin-bottom: 27px;
   margin-left: auto;
@@ -71,8 +72,6 @@ $color-furima: #3ccace;
   }
 }
 
-
-
 .profile-btn{
   background-color: $color-furima;
   color: white;
@@ -80,6 +79,7 @@ $color-furima: #3ccace;
   width: 250px;
   height: 50px;
 }
+
 .profile-main__content__title{
   color: black;
   font-size: 14px;
@@ -103,41 +103,49 @@ $color-furima: #3ccace;
   height: 30px;
   font-size: 13px;
 }
+
 #user_password_confirmation{
   width: 250px;
   height: 30px;
   font-size: 13px;
 }
+
 #user_family_name{
   width: 125px;
   height: 30px;
   font-size: 13px;
 }
+
 #user_first_name{
   width: 125px;
   height: 30px;
   font-size: 13px;
 }
+
 #user_family_name_kana{
   width: 125px;
   height: 30px;
   font-size: 13px;
 }
+
 #user_first_name_kana{
   width: 125px;
   height: 30px;
   font-size: 13px;
 }
+
 #user_birth_date_1i{
   width: 80px;
   height: 30px;
   font-size: 13px;
 }
+
 #user_birth_date_2i{
   width: 80px;
   height: 30px;
   font-size: 13px;
 }
+
 #user_birth_date_3i{
   width: 80px;
   height: 30px;
