@@ -1,0 +1,21 @@
+.sign-content
+  .registrations-new
+    .registrations-new__wrapper
+      .registrations-new__wrapper__nav
+        商品送付先入力
+      .registrations-new__wrapper__form
+        .registrations-new__wrapper__form__set
+          =form_with model:@address , url: addresses_path, do |f|
+            =render "devise/shared/error_messages", resource: @address
+            .profile-group          
+              = f.label :"お名前(全角)"
+              %span.profile-group__require 必須
+              %br
+              = f.text_field :user_name, {placeholder:" 例) 山田",class:'profile-group__input--left'}
+              = f.text_field :user_name, {placeholder:" 例) フリ太郎",class:'profile-group__input--left'}
+            .profile-group
+              = f.label :"お名前カナ(全角)"
+              %span.profile-group__require 必須
+              %br
+              = f.text_field :user_name, {placeholder:" 例) ヤマダ",class:'profile-group__input--left'}
+              = f.text_field :user_name, {placeholder:" 例) フリタロウ",class:'profile-group__input--left'}

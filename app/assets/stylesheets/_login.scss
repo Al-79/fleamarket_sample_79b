@@ -6,15 +6,15 @@ $color-furima: #3ccace;
   padding-bottom: 27px;
   height: 100vh;
   &__wrapper{
-    width: 456px;
-    height: auto;
+    width: 480px;
+    height: 500px;
     background-color: white;
     margin-right: auto;
     margin-left: auto;
     margin-top: 100px;
     &__registrations{
       width: 85%;
-      height: 85px;
+      height: 100px;
       padding-top: 24px;
       border-bottom: solid 1px;
       border-color: black;
@@ -22,27 +22,31 @@ $color-furima: #3ccace;
       margin: auto;
       &__nav{
         font-size: 14px;
+        margin-bottom: 10px;
       }
       &__button{
         background-color: $color-furima;
         color: white;
-        border: none;
         height: 43px;
         text-align: center;
         line-height: 40px;
         margin-left: auto;
         margin-right: auto;
+        border: 1px solid #949494;
         &__sign {
+          display: block;
           color: white;
           text-decoration: none;
-          display: block;
-          width: 300px;
+          width: 250px;
           margin: 0 auto;
         }
         &__form.field{
           width: 90%;
           margin: auto;
         }
+      }
+      &__button:hover {
+        box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
       }
     }
     &__form{
@@ -66,14 +70,18 @@ $color-furima: #3ccace;
         font-size: 100%;
       }
       .actions--red{
-        input{
+        .login-btn{
         background-color: $color-furima;;
         color: white;
-        border: none;
         cursor: pointer;
-        width: 70%;
+        border: 1px solid #949494;
+        width: 250px;
+        }
+        .login-btn:hover {
+          box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
         }
       }
+      
     }
   }
 }

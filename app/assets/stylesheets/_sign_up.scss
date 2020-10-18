@@ -13,8 +13,8 @@ $color-furima: #3ccace;
 }
 
 .registrations-new{
-  width: 40%;
-  height: 90%;
+  width: 550px;
+  height: 850px;
   background-color: white;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -43,7 +43,7 @@ $color-furima: #3ccace;
 }
 
 .form-require{
-  background-color: $color-furima;
+  background-color: red;
   margin: 0 0 0 8px;
   padding: 2px 4px;
   border-radius: 2px;
@@ -60,94 +60,71 @@ $color-furima: #3ccace;
   display: block;
   height: 50px;
   &__require{
-    background-color: $color-furima;
+    background-color: red;
     margin: 0 0 0 8px;
     padding: 2px 4px;
     border-radius: 2px;
     color: white;
     font-size: 12px;
-    width: 32px;
+    width: 40px;
     height: 19px;
     margin: 15px;
   }
 }
-
 .profile-btn{
   background-color: $color-furima;
+  cursor: pointer;
   color: white;
   margin: 50px;
   width: 250px;
   height: 50px;
 }
+.profile-btn:hover {
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
+
+.profile-group__sub{
+  color: #818181;
+  font-size: 13px;
+}
 
 .profile-main__content__title{
   color: black;
   font-size: 14px;
-  margin: 12px;
+  margin-bottom: 10px;
+  h2{
+    margin-top: 20px;
+    margin-bottom: -16px;
+    font-weight: bold;
+  }
 }
 
-#user_nickname{
-  width: 250px;
-  height: 30px;
-  font-size: 13px;
+#user_signup{
+  width: 270px;
+  height: 40px;
+  font-size: 14px;
 }
 
-#user_email{
-  width: 250px;
-  height: 30px;
-  font-size: 13px;
-}
-
-#user_password{
-  width: 250px;
-  height: 30px;
-  font-size: 13px;
-}
-
-#user_password_confirmation{
-  width: 250px;
-  height: 30px;
-  font-size: 13px;
-}
-
-#user_family_name{
-  width: 125px;
-  height: 30px;
-  font-size: 13px;
-}
-
-#user_first_name{
-  width: 125px;
-  height: 30px;
-  font-size: 13px;
-}
-
-#user_family_name_kana{
-  width: 125px;
-  height: 30px;
-  font-size: 13px;
-}
-
-#user_first_name_kana{
-  width: 125px;
-  height: 30px;
-  font-size: 13px;
+#user_user_name{
+  width: 135px;
+  height: 40px;
+  font-size: 14px;
 }
 
 #user_birth_date_1i{
-  width: 80px;
-  height: 30px;
-  font-size: 13px;
+  width: 90px;
+  height: 40px;
+  font-size: 14px;
 }
 
 #user_birth_date_2i{
-  width: 80px;
-  height: 30px;
-  font-size: 13px;
+  width: 90px;
+  height: 40px;
+  font-size: 14px;
 }
 
 #user_birth_date_3i{
-  width: 80px;
-  height: 30px;
-  font-size: 13px;
+  width: 90px;
+  height: 40px;
+  font-size: 14px;
 }

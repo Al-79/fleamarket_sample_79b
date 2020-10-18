@@ -11,59 +11,56 @@
               ニックネーム
               %span.form-require 必須
               %br/
-              = f.text_field :nickname, placeholder: '例）hurima'
+              = f.text_field :signup, placeholder: ' 例）furima'
             .registrations-new__wrapper__form__set__information
               メールアドレス
               %span.form-require 必須
               %br/
-              = f.email_field :email, placeholder: 'PC・携帯どちらでも可'
+              = f.email_field :signup, placeholder: ' PC・携帯どちらでも可'
             .registrations-new__wrapper__form__set__information
               パスワード
               %span.form-require 必須
               %br/
-              = f.password_field :password, placeholder: '7文字以上の半角英数字' 
+              = f.password_field :signup, placeholder: ' 7文字以上の半角英数字' 
               .registrations-new__wrapper__form__set__password__desc
                 ※ 英字と数字の両方を含めて設定してください
             .registrations-new__wrapper__form__set__passwordconfirmation
               = f.label :確認用パスワード
               %span.form-require 必須
               %br/
-              = f.password_field :password_confirmation, placeholder: 'パスワードをもう一度入力してください' 
-
+              = f.password_field :signup, placeholder: ' パスワードをもう一度入力してください' 
     %main.profile-main
       %section.profile-main__content   
-        %h2.profile-main__content__title
-          本人確認
+        .profile-main__content__title
+          %h2 本人確認
           <br>
           安心・安全にご利用いただくために、お客様の本人情報の登録にご協力ください。
           <br>
           他のお客様には公開されることはありません。
-          
         .profile-main__form
           .profile__form
             =form_with model: @user, url: user_registration_path, local: true do |f|
               =render "devise/shared/error_messages", resource: @user
               .profile-group          
-                = f.label :お名前
+                = f.label :"お名前(全角)"
                 %span.profile-group__require 必須
                 %br
-                = f.text_field :family_name, {placeholder:"例) 山中",class:'profile-group__input--left'}
-                = f.text_field :first_name, {placeholder:"例) 拓也",class:'profile-group__input--left'}
+                = f.text_field :user_name, {placeholder:" 例) 山田",class:'profile-group__input--left'}
+                = f.text_field :user_name, {placeholder:" 例) フリ太郎",class:'profile-group__input--left'}
               .profile-group
-                = f.label :お名前カナ
+                = f.label :"お名前カナ(全角)"
                 %span.profile-group__require 必須
                 %br
-                = f.text_field :family_name_kana, {placeholder:"例) ヤマナカ",class:'profile-group__input--left'}
-                = f.text_field :first_name_kana, {placeholder:"例) タクヤ",class:'profile-group__input--left'}
+                = f.text_field :user_name, {placeholder:" 例) ヤマダ",class:'profile-group__input--left'}
+                = f.text_field :user_name, {placeholder:" 例) フリタロウ",class:'profile-group__input--left'}
               .profile-group
                 = f.label :生年月日
                 %span.profile-group__require 必須
                 %br
                 = f.date_select :birth_date, { use_month_numbers:true, prompt:"--", end_year:1900, class:'profile-group__input--half'}
-                <br>
-                本人情報は正しく入力してください。
+              .profile-group__sub
+                ※本人情報は正しく入力してください。
                 <br>
                 会員登録後、修正するにはお時間をいただく場合があります。
-                
               .profile-group
                 = f.submit '送付先の入力画面へ', class: "profile-btn", url: "sending_destination_path";

@@ -1,0 +1,17 @@
+.mypage-main
+  .mypage-wrapper
+    = render "shared/side_bar"
+    .mypage-contents  
+      .mypage-contents__user
+        %h1.mypage-contents__user--name ベンティ
+        .mypage-contents__user--evaluations
+          %p.evaluation  評価 4
+          %p.evaluation 出品数 2
+        = image_tag 'mypage-top.png', class: 'top-image'
+      .mypage-contents__wrapper
+        %ul.mypage-contents__wrapper--topics
+          お知らせ
+          %li.mypage-contents__wrapper--topic
+            落札した商品が発送されました
+          %li.mypage-contents__wrapper--topic
+            出品完了しました

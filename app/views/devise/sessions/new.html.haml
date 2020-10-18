@@ -12,7 +12,6 @@
           Email
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス', class: "addless-box"
-        
         .field.space
           Password
           %br/
@@ -20,6 +19,4 @@
         - if devise_mapping.rememberable?
           .sessions-new__wrapper__form 
         .actions--red
-          = f.submit "ログイン"
- 
-          
+          = f.submit "ログイン", class:"login-btn"
