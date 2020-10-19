@@ -22,13 +22,15 @@ $color-furima: #3ccace;
     &__form__set{
       &__information{
         margin-bottom: 27px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 10px 0 27px 0;
         display: block;
         height: 50px; 
       }
       &__passwordconfirmation{
         margin-top: 50px;
+      }
+      &__password__desc{
+        font-size: 12px;
       }
     }
     &__nav{
@@ -44,7 +46,7 @@ $color-furima: #3ccace;
 
 .form-require{
   background-color: red;
-  margin: 0 0 0 8px;
+  margin-left: 20px;
   padding: 2px 4px;
   border-radius: 2px;
   color: white;
@@ -78,6 +80,7 @@ $color-furima: #3ccace;
   margin: 50px;
   width: 250px;
   height: 50px;
+  border: 1px solid #949494;
 }
 .profile-btn:hover {
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/

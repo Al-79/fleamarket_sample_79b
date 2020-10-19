@@ -5,9 +5,9 @@
         商品送付先入力
       .registrations-new__wrapper__form
         .registrations-new__wrapper__form__set
-          =form_with model:@address , url: addresses_path, do |f|
-            =render "devise/shared/error_messages", resource: @address
-            .profile-group          
+          =form_with model: @address, url: users_addresses_path, local: true do |f|
+            //= render "devise/shared/error_messages", resource: @address
+            .profile-group
               = f.label :"お名前(全角)"
               %span.profile-group__require 必須
               %br
@@ -19,3 +19,35 @@
               %br
               = f.text_field :user_name, {placeholder:" 例) ヤマダ",class:'profile-group__input--left'}
               = f.text_field :user_name, {placeholder:" 例) フリタロウ",class:'profile-group__input--left'}
+            .registrations-new__wrapper__form__set__information
+              〒郵便番号
+              %span.form-require 必須
+              %br/
+              = f.text_field :address, placeholder: ' 郵便番号'
+            .registrations-new__wrapper__form__set__information
+              都道府県
+              %span.form-require 必須
+              %br/
+              = f.text_field :address, placeholder: ' 都道府県'
+            .registrations-new__wrapper__form__set__information
+              市区町村
+              %span.form-require 必須
+              %br/
+              = f.text_field :address, placeholder: ' 市区町村'
+            .registrations-new__wrapper__form__set__information
+              番地
+              %span.form-require 必須
+              %br/
+              = f.text_field :address, placeholder: ' 番地'
+            .registrations-new__wrapper__form__set__information
+              建物名
+              %span.form-optional 任意
+              %br/
+              = f.text_field :address, placeholder: ' マンション名・ビル名'
+            .registrations-new__wrapper__form__set__information
+              連絡先
+              %span.form-optional 任意
+              %br/
+              = f.text_field :address, placeholder: ' 電話番号'
+            .profile-group
+              = f.submit 'ユーザー登録', class: "profile-btn", url: "user_addresses_path";

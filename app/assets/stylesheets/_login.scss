@@ -27,9 +27,8 @@ $color-furima: #3ccace;
       &__button{
         background-color: $color-furima;
         color: white;
-        height: 43px;
-        text-align: center;
-        line-height: 40px;
+        height: 45px;
+        line-height: 46px;
         margin-left: auto;
         margin-right: auto;
         border: 1px solid #949494;
@@ -57,12 +56,12 @@ $color-furima: #3ccace;
         font-size: 14px;
       }
       .field{
-        font-size: 20px;
+        font-size: 17px;
         text-align: center;
       }
       input{
-        width: 185px;
-        height: 48px;
+        width: 280px;
+        height: 30px;
         margin-left: auto;
         margin-right: auto;
         padding: 9px 16px 9px 16px;
@@ -75,6 +74,7 @@ $color-furima: #3ccace;
         color: white;
         cursor: pointer;
         border: 1px solid #949494;
+        height: 45px;
         width: 250px;
         }
         .login-btn:hover {
