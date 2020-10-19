@@ -29,6 +29,7 @@
               %span.form-require 必須
               %br/
               = f.text_field :address, placeholder: ' 都道府県'
+              /= f.collection_select(:prefecture_id, Prefecture.all, :id, :name )
             .registrations-new__wrapper__form__set__information
               市区町村
               %span.form-require 必須
