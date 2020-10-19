@@ -6,6 +6,92 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
   %body
+    %header.header
+      .header__inner
+        .header__main
+          .header__icon
+            = link_to "/" do
+              = image_tag "logo.png"
+          .header__searchbox
+            = form_with(model: @item, local: true) do |form|
+              = form.text_field :name, placeholder: "キーワードから探す", class:"header__searchbox--input"
+              .header__searchbox--icon
+                = button_tag type: :submit do
+                  = image_tag "icon-search 1.png"
+          %ul.resultLists
+        .header__nav
+          .header__listsLeft
+            .header__listsLeft--item.header__listsLeft--item--first
+              .category
+                %a#catBtn{:href => "/"} カテゴリー
+              .tree
+                %ul.categoryTree
+                  %li.categoryTree--item#No1
+                    %a#1{:href => "/"}
+                      レディース
+                      %ul.subcatTree
+                        %li.categoryTree--item
+                          %a#1{:href => "/"} トップス
+                        %li.categoryTree--item
+                          %a#1{:href => "/"} ジャケット/アウター
+                  %li.categoryTree--item#No2
+                    %a#1{:href => "/"} メンズ
+                  %li.categoryTree--item
+                    %a#1{:href => "/"} ベビー・キッズ
+                  %li.categoryTree--item
+                    %a#1{:href => "/"} その他
+            .header__listsLeft--item
+              .brand
+              %a#brandBtn{:href => "/"} ブランド
+              %ul.brandsPulldown.displayNone
+          .header__listsRight
+            %li.header__listsRight--item.header__listsRight--item--login
+              %a{:href => "/"} ログイン
+            %li.header__listsRight--item.header__listsRight--item--new
+              %a{:href => "/"} 新規会員登録
     = yield
+    .Banner
+      .Banner__box
+        .Banner__box__title
+          だれでもかんたん、人生を変えるフリマアプリ
+        .Banner__box__text
+          今すぐ無料ダウンロード！
+        .banner__content__btn
+          = link_to (image_tag ("app-store-logo.png"), class:"content-btn"), "#" 
+          = link_to (image_tag ("google-player.png") ,class: "content-btn"), "#"
+
+    %footer.footer
+      %ul.footer__contents
+        %li.footer__content
+          %h2.footer__content--head FURIMAについて
+          %ul
+            %li
+              %a{:href => "/"} 会社概要（運営会社）
+            %li
+              %a{:href => "/"} プライバシーポリシー
+            %li
+              %a{:href => "/"} FURIMA利用規約
+            %li
+              %a{:href => "/"} ポイントに関する特約
+        %li.footer__content
+          %h2.footer__content--head FURIMAを見る
+          %ul
+            %li
+              %a{:href => "/"} カテゴリー一覧
+            %li
+              %a{:href => "/"} ブランド一覧
+        %li.footer__content
+          %h2.footer__content--head ヘルプ＆ガイド
+          %ul
+            %li
+              %a{:href => "/"} FURIMAガイド
+            %li
+              %a{:href => "/"} FURIMAロゴ利用ガイドライン
+            %li
+              %a{:href => "/"} お知らせ
+      = link_to "/" do
+        .footer__logo
+          = image_tag "logo-white.png"
+      %p © FURIMA
