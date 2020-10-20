@@ -38,7 +38,7 @@
           <br>
           他のお客様には公開されることはありません。
         .profile-main__form
-          .profile__form
+          .profile-form
             =form_with model: @user, url: user_registration_path, local: true do |f|
               =render "devise/shared/error_messages", resource: @user
               .profile-group          

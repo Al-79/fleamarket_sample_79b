@@ -13,11 +13,11 @@ $color-furima: #3ccace;
 }
 
 .registrations-new{
-  width: 550px;
-  height: 850px;
+  width: 600px;
+  height: auto;
   background-color: white;
   padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   &__wrapper{
     &__form__set{
       &__information{
@@ -77,7 +77,7 @@ $color-furima: #3ccace;
   background-color: $color-furima;
   cursor: pointer;
   color: white;
-  margin: 50px;
+  margin-top: 50px;
   width: 250px;
   height: 50px;
   border: 1px solid #949494;
@@ -130,4 +130,9 @@ $color-furima: #3ccace;
   width: 90px;
   height: 40px;
   font-size: 14px;
+}
+
+#error_explanation{
+  font-size: 13px;
+  color: red;
 }
