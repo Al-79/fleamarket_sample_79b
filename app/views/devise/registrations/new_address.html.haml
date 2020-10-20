@@ -28,7 +28,7 @@
               都道府県
               %span.form-require 必須
               %br/
-              = f.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture,{include_blank: "---"}, { id: "address"} )
+              = f.collection_select(:prefecture_id, Prefecture.all, :id, :prefecture,{include_blank: "都道府県を選択してください"}, { id: "address"} )
             .registrations-new__wrapper__form__set__information
               市区町村
               %span.form-require 必須
