@@ -41,7 +41,7 @@
 
 }
 .input-area:hover{
-  border: 1px solid #3ccace;
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
 }
 .fa-camera {
   text-align: center;
@@ -74,9 +74,10 @@
     }
     &--space{
       border-radius: 5px;
-      width: 270px;
+      width: 400px;
       height: 150px;
       border-radius: 5px;
+      font-size: 17px;
     }
   }
 }
