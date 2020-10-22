@@ -7,11 +7,12 @@ Rails.application.routes.draw do
     get  'users/addresses', to: 'users/registrations#new_address'
     post 'users/addresses', to: 'users/registrations#create_address'
   end
+  resources :listings , only: [:index]
   resources :mypages, only: [:index]
   resources :items, only: [:index, :show]
   resources :users, only: [:edit, :update]
   resources :card, only: [:new, :show]
-  resources :addresses
+  resources :addresses, only: [:create, :new]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # after
   root 'front#index'
