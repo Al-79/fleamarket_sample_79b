@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-
+  
   def create
     @user = User.new(sign_up_params)
     unless @user.valid? #バリデーションチェック
@@ -16,6 +16,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
    protected
    
   def address_params
-    params.require(:ship_address).permit(:last_name, :first_name, :ruby_last_name, :ruby_first_name, :postal_code, :prefectures, :city, :address_detail, :apartment_name, :room_number, :phone_number)
+    params.require(:ship_address).permit(:family_name, :first_name, :family_name_kana, :first_name_kana, :postal_code, :prefectures, :city, :address_detail, :apartment_name, :phone_number)
   end
 end

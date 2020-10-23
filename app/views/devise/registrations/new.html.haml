@@ -40,7 +40,6 @@
         .profile-main__form
           .profile-form
             =form_with model: @user, url: user_registration_path, local: true do |f|
-              =render "devise/shared/error_messages", resource: @user
               .profile-group          
                 = f.label :"お名前(全角)"
                 %span.profile-group__require 必須
