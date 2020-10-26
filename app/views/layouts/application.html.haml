@@ -51,7 +51,6 @@
               %li.header__listsRight--item.header__listsRight--item--login
                 =link_to "マイページ", mypages_path(current_user)
               %li.header__listsRight--item.header__listsRight--item--new
-                =link_to "ログアウト", destroy_user_session_path, method: :delete
             -else
               %li.header__listsRight--item.header__listsRight--item--login
                 =link_to "ログイン", new_user_session_path(current_user)
