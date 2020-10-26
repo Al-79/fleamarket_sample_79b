@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   resources :listings , only: [:index]
   resources :mypages, only: [:index]
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show, :new]
   resources :users, only: [:edit, :update]
   resources :card, only: [:new, :show]
   resources :addresses, only: [:create, :new]
