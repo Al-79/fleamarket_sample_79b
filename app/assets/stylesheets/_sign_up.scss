@@ -72,6 +72,10 @@ $color-furima: #3ccace;
     height: 19px;
     margin: 15px;
   }
+  &__name-holder{
+    display: flex;
+    justify-content: center;
+  }
 }
 .profile-btn{
   background-color: $color-furima;
@@ -91,7 +95,7 @@ $color-furima: #3ccace;
   font-size: 13px;
 }
 
-.profile-main__content__title{
+.profile-desc-safety{
   color: black;
   font-size: 14px;
   margin-bottom: 10px;
@@ -102,30 +106,21 @@ $color-furima: #3ccace;
   }
 }
 
-#user_signup{
+#user_nickname,#user_email,
+#user_password,#user_password_confirmation{
   width: 270px;
   height: 40px;
   font-size: 14px;
 }
 
-#user_user_name{
+#user_family_name,#user_first_name,
+#user_family_name_kana,#user_first_name_kana{
   width: 135px;
   height: 40px;
   font-size: 14px;
 }
 
-#user_birth_date_1i{
-  width: 90px;
-  height: 40px;
-  font-size: 14px;
-}
-
-#user_birth_date_2i{
-  width: 90px;
-  height: 40px;
-  font-size: 14px;
-}
-
+#user_birth_date_1i,#user_birth_date_2i,
 #user_birth_date_3i{
   width: 90px;
   height: 40px;
