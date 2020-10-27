@@ -15,11 +15,11 @@ VALID_NAME = /\A[ぁ-んァ-ン一-龥]/
 VALID_NAME_KANA = /\A[ァ-ヶー－]+\z/
 
 validates :nickname, presence: true, length: { maximum: 20 }
-validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
-validates :password, presence: true, confirmation: true,length: { minimum: 7 }, format: { with: VALID_PASSWORD_REGEX }
-validates :first_name, presence: true, format: { with: VALID_NAME}
-validates :family_name, presence: true, format: { with: VALID_NAME}
-validates :first_name_kana, presence: true, format: { with: VALID_NAME_KANA}
-validates :family_name_kana, presence: true, format: { with: VALID_NAME_KANA}
+validates :email, presence: true, uniqueness: { case_sensitive: true },format: { with: VALID_EMAIL_REGEX }
+validates :password, presence: true, confirmation: true,length: { minimum: 7 }, format: { with: VALID_PASSWORD_REGEX }# ここが文字数の正規表現、パスワードの正規表現
+validates :first_name, presence: true, format: { with: VALID_NAME}# ここがユーザー本名全角の正規表現
+validates :family_name, presence: true, format: { with: VALID_NAME}# ここがユーザー本名全角の正規表現
+validates :first_name_kana, presence: true, format: { with: VALID_NAME_KANA}# ここがフリガナ全角の正規表現
+validates :family_name_kana, presence: true, format: { with: VALID_NAME_KANA}# ここがフリガナ全角の正規表現
 validates :birth_date, presence: true
 end
