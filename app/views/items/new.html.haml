@@ -50,8 +50,8 @@
           %label.listing-show__size  サイズ
           %label.Any 任意
           %br
-          = form.collection_select :sizes_id, Size.all, :id, :size
           .listing-show__area
+            = form.collection_select :sizes_id, Size.all, :id, :size, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
             %select.listing-show__area--category{name: "condition", type: "text"}
               %option{value: ""} 選択してください
               %option{value: "S"} S
