@@ -9,6 +9,18 @@ describe User do
       expect(user.errors[:nickname]).to include() 
     end
 
+    it "nicknameが20文字以上であると登録できないこと" do
+      user = build(:user, nickname: "12345678910000000000021")
+      user.valid?
+      expect(user.errors[:nickname]).to include("は20文字以内で入力してください")
+    end
+ 
+    it "nicknameが20文字以下であれば登録できること" do
+      user = build(:user, nickname: "taro")
+      user.valid?
+      expect(user).to be_valid
+    end
+
     it "emailがない場合は登録できないこと" do
       user = build(:user, email: nil)
       user.valid?
@@ -19,6 +31,18 @@ describe User do
       user = build(:user, password: nil)
       user.valid?
       expect(user.errors[:password]).to include("", "は7文字以上で入力してください", "は無効です。再入力してください")
+    end
+
+    it "passwordが7文字以上であれば登録できること" do
+      user = build(:user, password: "yamadadesu11", password_confirmation: "yamadadesu11")
+      user.valid?
+      expect(user).to be_valid
+    end
+ 
+    it "passwordが7文字以下である場合は登録できないこと" do
+      user = build(:user, password: "12345", password_confirmation: "12345")
+      user.valid?
+      expect(user.errors[:password]).to include("は7文字以上で入力してください", "は無効です。再入力してください")
     end
   
     it "password_confirmationとpasswordが異なる場合保存できない" do 
