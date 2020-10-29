@@ -1,7 +1,7 @@
 .listing-main
   .listing-containar
     .listing-body
-      = form_with url: "#" do |form|
+      = form_with url: "itenm/index" do |form|
         .listing-image
           %label.listing-image__tittle 出品画像
           %label.Mandatory 必須
@@ -34,14 +34,7 @@
           %label.Mandatory 必須
           %br
           .listing-show__area
-            %select.listing-show__area--category{name: "category", type: "text"}
-              %option{value: ""} 選択して下さい
-              %option{value: "レディース"}レディース
-              %option{value: "メンズ"}メンズ
-              %option{value: "ベビー・キッズ"}ベビー・キッズ
-              %option{value: "インテリア・住まい・小物"}インテリア・住まい・小物
-              %option{value: "本・音楽・ゲーム"}本・音楽・ゲーム
-              %option{value: "おもちゃ・ホビー・グッズ"}おもちゃ・ホビー・グッズ
+            = form.collection_select :categories_id, Category.all, :id, :name, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
           %label.listing-show__brand ブランド
           %label.Any 任意
           %br
@@ -52,22 +45,11 @@
           %br
           .listing-show__area
             = form.collection_select :sizes_id, Size.all, :id, :size, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
-            %select.listing-show__area--category{name: "condition", type: "text"}
-              %option{value: ""} 選択してください
-              %option{value: "S"} S
-              %option{value: "M"} M
           %label.listing-show__condition  商品の状態
           %label.Mandatory 必須
           %br
           .listing-show__area
-            %select.listing-show__area--category{name: "condition", type: "text"}
-              %option{value: ""} 選択してください
-              %option{value: "新品、未使用"}新品、未使用
-              %option{value: "未使用に近い"}未使用に近い
-              %option{value: "目立った傷や汚れなし"}目立った傷や汚れなし
-              %option{value: "やや傷や汚れなし"}やや傷や汚れなし
-              %option{value: "傷や汚れあり"}傷や汚れあり
-              %option{value: "全体的に状態が悪い"}全体的に状態が悪い
+            = form.collection_select :conditions_id, Condition.all, :id, :condition, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
           %br
         .listing-delivery                    
           .listing-delivery__show 配送について
