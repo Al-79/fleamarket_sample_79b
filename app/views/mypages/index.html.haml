@@ -3,7 +3,8 @@
     = render "shared/side_bar"
     .mypage-contents  
       .mypage-contents__user
-        %h1.mypage-contents__user--name ベンティ
+        .mypage-contents__user--name
+          %h1="#{current_user.nickname}さん"
         .mypage-contents__user--evaluations
           %p.evaluation  評価 4
           %p.evaluation 出品数 2

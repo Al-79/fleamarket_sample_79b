@@ -191,12 +191,16 @@
       .form__submit{
         line-height: 48px;
         background: #3CCACE;
-        border: 1px solid #3CCACE;
+        border: 1px solid #949494;
         color: #fff;
+        cursor: pointer;
         width: 60%;
         font-size: 18px;
-        border-radius: 100px;
+        border-radius: 5px;
         margin-top: 20px;
+      }
+      .form__submit:hover {
+        box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
       }
     }
     .link{
