@@ -1,7 +1,7 @@
 .listing-main
   .listing-containar
     .listing-body
-      = form_with url: "#" do |form|
+      = form_with model: @item, local: true do |form|
         .listing-image
           %label.listing-image__tittle 出品画像
           %label.Mandatory 必須
@@ -34,7 +34,7 @@
           %label.Mandatory 必須
           %br
           .listing-show__area
-            = form.collection_select :categories_id, Category.all, :id, :name, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+            = form.collection_select :category_id, Category.all, :id, :name, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
           %label.listing-show__brand ブランド
           %label.Any 任意
           %br
@@ -44,12 +44,12 @@
           %label.Any 任意
           %br
           .listing-show__area
-            = form.collection_select :sizes_id, Size.all, :id, :size, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+            = form.collection_select :size_id, Size.all, :id, :size, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
           %label.listing-show__condition  商品の状態
           %label.Mandatory 必須
           %br
           .listing-show__area
-            = form.collection_select :conditions_id, Condition.all, :id, :condition, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+            = form.collection_select :condition_id, Condition.all, :id, :condition, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
           %br
         .listing-delivery                    
           .listing-delivery__show 配送について
