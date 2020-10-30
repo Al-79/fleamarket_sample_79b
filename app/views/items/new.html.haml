@@ -1,7 +1,7 @@
 .listing-main
   .listing-containar
     .listing-body
-      = form_with url: "itenm/index" do |form|
+      = form_with url: "#" do |form|
         .listing-image
           %label.listing-image__tittle 出品画像
           %label.Mandatory 必須
@@ -58,33 +58,17 @@
           %label.Mandatory 必須
           %br
           .listing-delivery__area
-            %select.listing-delivery__area--category{name: "category", type: "text"}
-              %option{value: ""} 選択して下さい
-              %option{value: "送料込み(出品者負担)"}送料込み(出品者負担)
-              %option{value: "着払い(購入者負担)"}着払い(購入者負担)
+            = form.collection_select :postage_payer_id, PostagePayer.all, :id, :postage_payer, { include_blank: "選択してください" }, { class: "listing-delivery__area--category" }
           %label.listing-delivery__prefectures 発送元の地域
           %label.Mandatory 必須
           %br
           .listing-delivery__area
-            %select.listing-delivery__area--category{name: "category", type: "text"}
-              %option{value: ""} 選択して下さい
-              %option{value: "北海道"}北海道
-              %option{value: "東北地方"}東北地方
-              %option{value: "関東地方"}関東地方
-              %option{value: "中部地方"}中部地方
-              %option{value: "関西地方"}関西地方
-              %option{value: "中国地方"}中国地方
-              %option{value: "四国地方"}四国地方
-              %option{value: "九州地方、沖縄地方"}九州地方、沖縄地方
+            = form.collection_select :prefecture_id, Prefecture.all, :id, :prefecture, { include_blank: "選択してください" }, { class: "listing-delivery__area--category" }
           %label.listing-delivery__day 発送までの日数
           %label.Mandatory 必須
           %br
           .listing-delivery__area
-            %select.listing-delivery__area--category{name: "category", type: "text"}
-              %option{value: ""} 選択して下さい
-              %option{value: "1〜2"}1〜2で発送
-              %option{value: "2〜7"}2〜7で発送
-              %option{value: "4〜7"}4〜7で発送        
+            = form.collection_select :preparation_day_id, PreparationDay.all, :id, :preparation_day, { include_blank: "選択してください" }, { class: "listing-delivery__area--category" }
         .listing-price
           .listing-price__description 価格(¥300〜9,9999,999)
           %br
