@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   belongs_to :category
-  belongs_to :brand
+  belongs_to :brand, optional: true
   has_many :item_images, dependent: :destroy
   belongs_to :user
   belongs_to_active_hash :size
