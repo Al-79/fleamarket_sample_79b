@@ -1,0 +1,98 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+.buy-body{
+    height: auto;
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+  &__main{
+    height: 780px;
+    width: 700px;
+    background-color: #ffffff;
+    &__title{
+      height: calc(10%);
+      width: 100%;
+      border-bottom: 2px solid #f8f8f8;
+      &__sentence{
+        display: block;
+        text-align: center;
+        font-size: 17px;
+        line-height: 85px;
+      }
+    }
+    &__buy-items{
+      height: calc(16.5%);
+      width: 100%;
+      border-bottom: 2px solid #f8f8f8;
+      &__info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 500px;
+        height: 115px;
+        margin: 10px 80px;
+        &__image{
+          height: 100%;
+          width: calc(35%);
+          background-color: crimson;
+        }
+        &__detail{
+          margin-left: 15px;
+          font-size: 16px;
+          &__item-name{
+            line-height: 1.4em;
+            margin-bottom: 8px;
+          }
+          &__item-price{
+            text-align: right;
+          }
+        }
+      }
+    }
+    &__price{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: calc(15%);
+      width: 100%;
+      border-bottom: 2px solid #f8f8f8;
+      &__table{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 75%;
+        &__sub{
+          font-size: 20px;
+        }
+        &__main{
+          font: bold;
+          font-size: 30px;
+        }
+      }
+    }
+    &__payment{
+      height: calc(16.5%);
+      width: 100%;
+      border-bottom: 1px solid #f8f8f8;
+    }
+    &__destination{
+      height: calc(16.5%);
+      width: 100%;
+      background-color: forestgreen;
+      border-bottom: 1px solid black;
+    }
+    &__purchase{
+      height: calc(16.7%);
+      width: 100%;
+      background-color: lightgreen;
+    }
+
+  }
+}
