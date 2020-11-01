@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get 'items/:id/buy', to: 'items#buy'
   resources :users, only: [:edit, :update, :create]
   resources :card, only: [:new, :show]
+    get 'card/:id/registration', to: 'card#registration'
   resources :addresses, only: [:create, :new]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # after
