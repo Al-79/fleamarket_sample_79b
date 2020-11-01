@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :listings , only: [:index]
   resources :mypages, only: [:index]
   resources :items, only: [:index, :show]
+    get 'items/:id/buy', to: 'items#buy'
   resources :users, only: [:edit, :update, :create]
   resources :card, only: [:new, :show]
   resources :addresses, only: [:create, :new]
