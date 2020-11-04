@@ -12,7 +12,7 @@
         購入した商品
   %ul.mypage-sidebar__topics
     .mypage-sidebar__tittle 設定・ヘルプ
-    = link_to new_card_path(current_user), class: "mypage-sidebar__topic--btn" do
+    = link_to "#", class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
         設定
     = link_to "#", class: "mypage-sidebar__topic--btn" do
@@ -21,6 +21,6 @@
     = link_to destroy_user_session_path, class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
         ログアウト
-    = link_to "#", class: "mypage-sidebar__topic--btn" do
+    = link_to new_card_path(current_user), class: "mypage-sidebar__topic--btn" do
       %li.mypage-sidebar__topic
         支払い方法
