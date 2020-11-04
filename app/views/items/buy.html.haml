@@ -7,10 +7,10 @@
     .buy-body__main__buy-items
       .buy-body__main__buy-items__info
         .buy-body__main__buy-items__info__image
-          ここにアイテム画像が入るよ！
+          =image_tag src="mmtop.jpg", size:"190x115"
         .buy-body__main__buy-items__info__detail
           .buy-body__main__buy-items__info__detail__item-name
-            BOSS エフェクター SD-1 super over drive
+            すごい桃
           .buy-body__main__buy-items__info__detail__item-price
             送料込み (税込)¥4,900
     .buy-body__main__price
@@ -21,9 +21,25 @@
           ¥4,900
     .buy-body__main__payment
       .buy-body__main__payment__content
-        .buy-body__main__payment__choice
-          
+        .buy-body__main__payment__content__payment_system
+          支払い方法
+        .buy-body__main__payment__content__choice
+          %input#check1.accordion-hidden{:type => "checkbox"}
+          %label.accordion-open{:for => "check1"} 選 択 す る
+          %label.accordion-close{:for => "check1"} 
+            %p=link_to "コンビニ払い","#", class:"payment"
+            %p=link_to "クレジットカード払い", "#", class:"payment"
+            ////card_path(current_user)
         .buy-body__main__payment__
     .buy-body__main__destination
+      .buy-body__main__destination__detail
+        送付先
+      .buy-body__main__destination__detail
+        〒001-0000
+      .buy-body__main__destination__detail
+        北海道 札幌市 札幌
+      .buy-body__main__destination__detail
+        山田 太郎
     .buy-body__main__purchase
-      =form_tag()
+      .buy-body__main__purchase__btn
+        購入確定ボタン
