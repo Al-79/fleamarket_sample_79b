@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :brand, optional: true
   has_many :item_images, dependent: :destroy
+  accepts_nested_attributes_for :item_images, allow_destroy: true
   belongs_to :user
   belongs_to_active_hash :size
   belongs_to_active_hash :condition

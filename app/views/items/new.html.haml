@@ -8,8 +8,8 @@
           %br
           .listing-image__sub-tittle 最大10枚までアップロードできます
           %br
-          = form.fields_for :items do |i|
-            = i.file_field :image, type: 'file', name: "item[images_attributes][][image_url]", value:"", style: "display:none", id:"img-file"
+          = form.fields_for :item_images do |i|
+            = i.file_field :image, type: 'file', name: "item[item_images_attributes][][image]", value:"", style: "display:none", id:"img-file"
             %label.listing-camera{for: "img-file"}
               .input-area
                 %i.fas.fa-camera
