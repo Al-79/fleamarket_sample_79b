@@ -10,9 +10,17 @@ Rails.application.routes.draw do
   end
   resources :listings , only: [:index]
   resources :mypages, only: [:index]
-  resources :items, only: [:index, :show]
+  resources :items, only: [:index, :show] do
+    member do
+      get 'buy'
+    end
+  end
   resources :users, only: [:edit, :update, :create]
-  resources :card, only: [:new, :show]
+  resources :card, only: [:new, :show] do
+    member do
+    get 'registration'
+    end
+  end
   resources :addresses, only: [:create, :new]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # after
