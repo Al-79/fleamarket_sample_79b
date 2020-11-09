@@ -15,9 +15,9 @@ class ItemsController < ApplicationController
       brand = Brand.create(name: params[:item][:brand_name])
     end
     
-    item = Item.create!(item_params)
+    item = Item.new(item_params)
     item.brand_id = brand.id
-    if item.save
+    if item.save!
     else
       @item = Item.new
       render :new
