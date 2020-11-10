@@ -40,6 +40,7 @@ $(function(){
           let child_select = build_childSelect;
           // selectタグを生成してビューにappendする
           $(".category_field").empty().append(child_select);
+          $(".category_field_gc").empty();
           // jbuilderから取得したデータを1件ずつoptionタグにappendする
           data.forEach(function (d) {
             let option_html = build_Option(d)
