@@ -1,0 +1,34 @@
+.mypage-main
+  .mypage-wrapper
+    = render "shared/side_bar"
+    .mypage-contents  
+      .mypage-contents__user
+        .mypage-contents__user--name
+          %h1="#{current_user.nickname}さん"
+        .mypage-contents__user--evaluations
+          %p.evaluation  評価 4
+          %p.evaluation 出品数 2
+        = image_tag 'mypage-top.png', class: 'top-image'
+      .mypage-contents__wrapper
+        .pickup-container
+          .pickup-container__title
+            出品した商品
+            .pickup-container__product
+              -# = link_to "アーカイバ", "#", class:"product__head"
+              .pickup-container__product__item
+                - @items.last(5).each do |item|
+                  .pickup-container__product__item__image
+                    = link_to "#" do
+                      -# = image_tag item.item_images.image, class:"item-image"
+                      -# = item.item_images[0].image.url
+                    .pickup-container__product__item__body
+                      .pickup-container__product__item__body__title
+                        = item.name
+                        .pickup-container__product__item__body__text
+                          %ul 
+                            %li
+                              = item.price
+                            %li
+                              ★ 1
+                        .pickup-container__product__item__body__tax
+                          (税込)
