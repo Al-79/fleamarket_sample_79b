@@ -20,4 +20,5 @@ class Item < ApplicationRecord
   validates :postage_payer_id, presence: true
   validates :prefecture_id, presence: true
   validates :price, presence: true
+  validates :item_images, presence: true
 end
