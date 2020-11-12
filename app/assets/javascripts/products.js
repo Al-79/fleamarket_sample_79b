@@ -15,8 +15,7 @@ $(function(){
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
   $('#item_item_images_attributes_0_image').on('change', function(e) {
-    console.log("test")
-    console.log(e.target.files[0])
+    // console.log(e.target.files[0])
     // fileIndexの先頭の数字を使ってinputを作る
     $('.listing-image').append(buildFileField(fileIndex[0]));
     fileIndex.shift();

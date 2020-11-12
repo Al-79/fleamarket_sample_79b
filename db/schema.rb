@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_09_25_150608) do
     t.integer "preparation_day_id", null: false
     t.integer "postage_payer_id", null: false
     t.integer "prefecture_id", null: false
+    t.integer "buyer_id"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
