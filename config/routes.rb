@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   resources :listings , only: [:index]
   resources :mypages, only: [:index]
-  resources :items, only: [:index, :show] do
+  resources :items, only: [:index, :show, :new, :create] do
     member do
       get 'buy'
     end
