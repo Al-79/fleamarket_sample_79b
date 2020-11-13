@@ -22,12 +22,26 @@ class CardController < ApplicationController
       )
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to mypage_path(current_user.id)
+        redirect_to root_path(current_user.id)
       else
         render :new
       end
     end
   end
+
+  def show 
+    @card = Card.where(user_id: current_user.id).first
+  if @card.blank?
+     redirect_to action: "new"
+  else
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    customer = Payjp::Customer.retrieve(@card.customer_id) 
+    @default_card_information = customer.cards.retrieve(@card.card_id) 
+
+    @exp_month = @customer_card.exp_month.to_s
+    @exp_year = @customer_card.exp_year.to_s.slice(2,3)
+  end
+end
 
   private
 

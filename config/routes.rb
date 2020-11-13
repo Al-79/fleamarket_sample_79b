@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       # post 'registration'
     end
     # member do
-    #   get 'registration'
+    get 'show', to: 'card#show'
     # end
   end 
   resources :addresses, only: [:create, :new]
