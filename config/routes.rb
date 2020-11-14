@@ -16,13 +16,13 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:edit, :update, :create]
-  resources :card, only: [:create, :show, :edit, :new] do
+  resources :card, only: [:create, :show, :edit, :new, :destroy] do
     collection do
       post 'delete', to: 'card#delete'
       # post 'show'
       # post 'new', to: 'card#new'
       # get 'registration'
-      # post 'registration'
+      get 'registration', to:'card#registration'
     end
     # member do
     get 'show', to: 'card#show'

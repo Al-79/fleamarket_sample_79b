@@ -29,6 +29,18 @@ class CardController < ApplicationController
     end
   end
 
+  def delete
+    card = CreditCard.where(user_id: current_user.id).first
+    if card.blank?
+    else
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer.delete
+      card.delete
+    end
+      redirect_to action: "new"
+  end
+
   def show 
     @card = CreditCard.where(user_id: current_user.id).first
     if @card.blank?
@@ -36,7 +48,22 @@ class CardController < ApplicationController
     else
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id) 
-      @default_card_information = customer.cards.retrieve(@card.card_id) 
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+      @card_brand = @default_card_information.brand
+      case @card_brand
+      when "Visa"
+        @card_src = "visa.png"
+      when "JCB"
+        @card_src = "jcb.jpeg"
+      when "MasterCard"
+        @card_src = "master.png"
+      when "American Express"
+        @card_src = "amex.png"
+      when "Diners Club"
+        @card_src = "diners.gif"
+      when "Discover"
+        @card_src = "discover.jpg"
+      end
     end
  end
 
