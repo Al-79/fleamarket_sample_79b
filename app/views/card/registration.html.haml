@@ -1,9 +1,8 @@
 .mypage-main
   .mypage-wrapper
-    = render "shared/side_bar"
     .credit-main
       -# .credit-wrapper
-      %h2.credit-heading クレジットカード情報入力
+      %h2.credit-heading クレジットカード登録
       .credit-containar
         = form_tag("#", method: :post, id: 'charge-form',  name: "inputForm") do
           .credit-namber

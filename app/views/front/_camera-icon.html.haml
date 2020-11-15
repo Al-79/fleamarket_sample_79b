@@ -1,4 +1,5 @@
 .sell-btn
   .sell-btn__text
     出品する
-    = image_tag "icon_camera.png", class:"icon-btn"
+    = link_to "/items/new" do
+      = image_tag "icon_camera.png", class:"icon-btn"

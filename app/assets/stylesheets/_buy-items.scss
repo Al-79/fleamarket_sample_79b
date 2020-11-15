@@ -1,0 +1,176 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+}
+
+.buy-body{
+    height: auto;
+    width: auto;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+  &__main{
+    height: 800px;
+    width: 700px;
+    background-color: #ffffff;
+    margin-bottom: 90px;
+    &__title{
+      height: 10%;
+      width: 100%;
+      border-bottom: 2px solid #f8f8f8;
+      &__sentence{
+        display: block;
+        text-align: center;
+        font-size: 17px;
+        line-height: 85px;
+      }
+    }
+    &__buy-items{
+      height: 17%;
+      width: 100%;
+      border-bottom: 2px solid #f8f8f8;
+      &__info{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 115px;
+        margin: 15px 80px;
+        &__image{
+          height: 100%;
+          width: 35%;
+          margin-bottom: 10px;
+        }
+        &__detail{
+          &__item-name{
+            line-height: 1.4em;
+            margin-bottom: 8px;
+            text-align: start;
+            font-size: 17px;
+          }
+          &__item-price{
+            text-align: right;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    &__price{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 13%;
+      width: 100%;
+      border-bottom: 2px solid #f8f8f8;
+      &__table{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 75%;
+        &__sub{
+          font-size: 20px;
+        }
+        &__main{
+          font: bold;
+          font-size: 30px;
+        }
+      }
+    }
+    &__payment{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 20%;
+      width: 100%;
+      border-bottom: 2px solid #f8f8f8;
+      &__content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height:auto;
+        width: 535px;
+        &__payment_system{
+          width: 30%;
+          margin-left: 10px;
+          font-size: 20px;
+        }
+        &__choice{
+          width: 40%;
+          text-align: -webkit-center;
+          margin-left: 150px;
+        }
+      }
+    }
+    &__destination{
+      height: auto;
+      width: 100%;
+      border-bottom: 2px solid #f8f8f8;
+      &__detail{
+        display: block;
+        margin: 5px 0 5px 90px;
+      }
+    }
+    &__purchase{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 14%;
+      width: 100%;
+      &__btn{
+        background-color: $color-furima;
+        cursor: pointer;
+        color: white;
+        margin-top: 50px;
+        padding-top: 20px;
+        width: 250px;
+        height: 50px;
+        text-align: center;
+        font-size: 20px;
+        border: 1px solid #949494;
+      }
+      &__btn:hover {
+        box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+      }
+    }
+  }
+}
+
+.payment{
+  display: block;
+  margin-top: 7px;
+  color: black;
+  text-decoration: none;
+  border-bottom: dotted 2px #87CEFA;
+}
+
+.accordion-hidden{
+  display: none;
+}
+
+/* Question部分 */
+.accordion-open {
+  display: block;
+  width:auto;
+  border: solid 2px #8a8080;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Answer部分は最初は表示しない */
+.accordion-close {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  padding: 0;
+  opacity: 0;
+  transition: 0.5s;/* 表示速度の設定 */
+}
+
+/* チェックボックスにチェックが入ったらAnswer部分を表示 */
+.accordion-hidden:checked + .accordion-open + .accordion-close {
+  height: auto;
+  opacity: 1;
+  font-weight: 500;
+}
