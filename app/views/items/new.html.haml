@@ -34,7 +34,9 @@
           %label.Mandatory 必須
           %br
           .listing-show__area
-            = form.collection_select :category_id, Category.all, :id, :name, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+            = form.collection_select :category_id, @parents, :id, :name, { include_blank: "選択してください" }, { class: "listing-show__area--category category_field" }
+            .category_field_c
+            .category_field_gc
           %label.listing-show__brand ブランド
           %label.Any 任意
           %br

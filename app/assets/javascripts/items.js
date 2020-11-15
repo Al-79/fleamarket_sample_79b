@@ -1,9 +1,12 @@
 $(function(){
   // 子のselectタグを追加
   function build_childSelect() {
-    let child_select = `<select name="post[category_id]" class="child_category_id">
+    let child_select = `<i class="fas fa-angle-down"></i>
+                        <br>
+                        <select name="post[category_id]" class="child_category_id">
                           <option value="">---</option>
-                        </select>`
+                        </select>
+                        `
     return child_select;
   }
 
@@ -15,16 +18,17 @@ $(function(){
 
   // 孫のselectタグを追加
   function build_gcSelect() {
-    let gc_select = `
-                    <select name="post[category_id]" class="gc_category_id">
-                      <option value="">---</option>
-                    </select>`
+    let gc_select = `<i class="fas fa-angle-down"></i>
+                     <br>
+                     <select name="post[category_id]" class="gc_category_id">
+                       <option value="">---</option>
+                     </select>`
     return gc_select;
   }
 
-  $(".listing-show__area--category").change(function () {
+  $(".category_field").change(function () {
     // 選択した親の値を取得する
-    let parentValue = $(".listing-show__area--category").val(); 
+    let parentValue = $(".category_field").val(); 
      let form = $(this);
     //  form.nextAll(".gc_category_id").remove();
     // 初期値("---")以外を選択したらajaxを開始
@@ -39,7 +43,7 @@ $(function(){
         .done(function (data) {
           let child_select = build_childSelect;
           // selectタグを生成してビューにappendする
-          $(".category_field").empty().append(child_select);
+          $(".category_field_c").empty().append(child_select);
           $(".category_field_gc").empty();
           // jbuilderから取得したデータを1件ずつoptionタグにappendする
           data.forEach(function (d) {
@@ -53,7 +57,7 @@ $(function(){
         })
     }
   });
-  $(".category_field").on("change", ".child_category_id", function () {
+  $(".category_field_c").on("change", ".child_category_id", function () {
     // 選択した子の値を取得する
     let childValue = $(".child_category_id").val();
     // 初期値("---")以外を選択したらajaxを開始
