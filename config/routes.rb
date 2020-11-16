@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     end
     # member do
     get 'show', to: 'card#show'
+    get 'confirmation', to: 'card#confirmation'
     # end
   end 
   resources :addresses, only: [:create, :new]

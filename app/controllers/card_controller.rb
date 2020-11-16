@@ -22,7 +22,7 @@ class CardController < ApplicationController
       )
       @card = CreditCard.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
       if @card.save
-        redirect_to root_path(current_user.id)
+        redirect_to mypages_path(current_user.id)
       else
         render :new
       end
@@ -38,7 +38,7 @@ class CardController < ApplicationController
       customer.delete
       card.delete
     end
-      redirect_to action: "new"
+    redirect_to mypages_path(current_user.id)
   end
 
   def show 
