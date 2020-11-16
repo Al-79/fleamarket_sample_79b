@@ -28,7 +28,7 @@
           %label.accordion-open{:for => "check1"} 選 択 す る
           %label.accordion-close{:for => "check1"} 
             %p=link_to "コンビニ払い","#", class:"payment"
-            %p=link_to "クレジットカード払い", "#", class:"payment"
+            %p=link_to "クレジットカード払い", registration_card_index_path(current_user), class:"payment"
             ////card_path(current_user)
         .buy-body__main__payment__
     .buy-body__main__destination
