@@ -30,11 +30,11 @@ class CardController < ApplicationController
   end
 
   def delete
-    if card.present?
+    if @card.present?
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_key)
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(@card.customer_id)
       customer.delete
-      card.delete
+      @card.delete
     end
     redirect_to mypages_path(current_user.id)
   end
