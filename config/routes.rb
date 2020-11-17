@@ -19,15 +19,12 @@ Rails.application.routes.draw do
   resources :card, only: [:create, :show, :edit, :new, :destroy] do
     collection do
       post 'delete', to: 'card#delete'
-      # post 'show'
-      # post 'new', to: 'card#new'
-      # get 'registration'
       get 'registration', to:'card#registration'
     end
-    # member do
-    get 'show', to: 'card#show'
-    get 'confirmation', to: 'card#confirmation'
-    # end
+     member do
+      get 'show', to: 'card#show'
+      get 'confirmation', to: 'card#confirmation'
+    end
   end 
   resources :addresses, only: [:create, :new]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

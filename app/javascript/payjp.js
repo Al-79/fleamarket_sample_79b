@@ -1,6 +1,5 @@
 $(window).on("load",function(){
   $('#charge-form').on('submit', function(e) {
-    console.log("aaa")
     e.preventDefault()
     Payjp.setPublicKey("pk_test_d5c95d5cbf1ea89733c9d85a");
     var card = {
@@ -9,13 +8,10 @@ $(window).on("load",function(){
       exp_year: document.getElementById("exp_year").value,
       cvc: document.getElementById("cvc").value
     };
-    console.log(card)
     if (card.number == "" || card.cvc == "") {
       alert("入力漏れがあります");
     } else {
       Payjp.createToken(card, function(status, response) {
-        console.log(status)
-        console.log(response)
         if (status === 200 ) {
           $("#card-number").removeAttr("name");
           $("#cvc").removeAttr("name");
