@@ -12,9 +12,7 @@ class CardController < ApplicationController
 
   def create
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-    if params['payjp-token'].blank?
-      render :new
-    else
+    if params['payjp-token'].present?
       customer = Payjp::Customer.create(
         email: current_user.email,
         card: params['payjp-token'],
@@ -26,13 +24,13 @@ class CardController < ApplicationController
       else
         render :new
       end
+    else
+      render :new
     end
   end
 
   def delete
-    card = CreditCard.where(user_id: current_user.id).first
-    if card.blank?
-    else
+    if card.present?
       Payjp.api_key = ENV['PAYJP_SECRET_KEY']
       customer = Payjp::Customer.retrieve(card.customer_id)
       customer.delete
@@ -42,10 +40,7 @@ class CardController < ApplicationController
   end
 
   def show 
-    @card = CreditCard.where(user_id: current_user.id).first
-    if @card.blank?
-      redirect_to action: "new"
-    else
+    if @card.present?
       Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
       customer = Payjp::Customer.retrieve(@card.customer_id) 
       @default_card_information = customer.cards.retrieve(@card.card_id)
@@ -64,12 +59,14 @@ class CardController < ApplicationController
       when "Discover"
         @card_src = "discover.jpg"
       end
+    else
+      redirect_to action: "new"
     end
  end
 
   private
 
   def set_card
-    @card = CreditCard.where(user_id: current_user).first
+    @card = CreditCard.find_by(user_id: current_user)
   end
 end
