@@ -2,7 +2,7 @@ class ItemImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
-  process resize_to_fit: [100, 100]  // この記述は追記
+  process resize_to_fit: [100, 100] 
 
   # Choose what kind of storage to use for this uploader:
   storage :file

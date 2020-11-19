@@ -4,21 +4,31 @@
     .show-body__main__content
       .show-item
         .show-item__name
-          近江牛
+          = @item.name
         .show-item__images
           .show-item__images__main
-            = image_tag "image_6.jpg", class:"show-image-main"
+            - @item.item_images.each do |item|
+              =image_tag item.image.url class:"show-image-main"
           .show-item__images__sub
-            = image_tag "image_1.jpg", class:"show-image-sub"
-            = image_tag "image_1.jpg", class:"show-image-sub"
-            = image_tag "image_1.jpg", class:"show-image-sub"
+            - @item.item_images.each do |item|
+              =image_tag item.image.url class:"show-image-sub"
         .show-item__price
-          ¥1,000,000,000
+          =@item.price
         .show-item__send-tax
           (税込)送料込み
         .show-item__detail
-          雨ニモマケズ風ニモマケズ雪ニモ夏ノ暑サニモマケヌ丈夫ナカラダヲモチ慾ハナク決シテ瞋ラズイツモシヅカニワラッテヰル一日ニ玄米四合ト味噌ト少シノ野菜ヲタベアラユルコトヲジブンヲカンジョウニ入レズニヨクミキキシワカリ ..
-        = render 'show-itembox'
+          =@item.introduction
+        = render  partial: "show-itembox", locals: { item: @item }
+        - if user_signed_in? && current_user.id == @item.user_id
+          .buttons
+            %h1.edit
+              編集
+            %h1.delete
+              削除 
+        - else 
+          %h1.purchase
+            購入
+        
     .option
       = link_to "#", class:"likes_btn" do
         .likes-btn

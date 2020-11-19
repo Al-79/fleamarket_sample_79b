@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
+    # order("deskorask").limit(5)
   end
 
   def new
@@ -25,8 +26,10 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @items = Item.all
+    @item = Item.find(params[:id])
   end
+
+  
 
   private
   def brand_params
@@ -36,6 +39,5 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :introduction, :price, :category_id, :brand_id, :size_id, :condition_id, :preparation_day_id, :postage_payer_id, :prefecture_id, item_images_attributes: [:image]).merge(user_id: current_user.id)
   end
 
-  def show
-  end
+  
 end

@@ -2,25 +2,35 @@
   %table
     %tr
       %th 出品者
-      %td 三日月大造
+      %td
+        = item.user.nickname
     %tr
       %th カテゴリ
       %td= link_to "食品", "#", class:"category-name"
     %tr
       %th ブランド
-      %td 近江牛
+      %td 
+        - if item.brand_id
+          = item.brand.name
+        
+        
     %tr
       %th 商品サイズ
-      %td 1kg
+      %td 
+        = item.size.size
     %tr
       %th 商品状態
-      %td 新品
+      %td 
+        = item.condition.condition
     %tr
       %th 配送料の負担
-      %td 送料込み（出品者負担）
+      %td 
+        = item.postage_payer.postage_payer
     %tr
       %th 発送元の地域
-      %td 滋賀
+      %td 
+        = item.prefecture.prefecture
     %tr
       %th 発送日の目安
-      %td 1-2日で発送
+      %td 
+        = item.preparation_day.preparation_day
