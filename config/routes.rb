@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     post 'users/addresses', to: 'users/registrations#create_address'
   end
   resources :listings , only: [:index]
-  resources :mypages, only: [:index]
+  resources :mypages, only: [:index, :show]
   resources :items, only: [:index, :show, :new, :create] do
     member do
       get 'buy'
