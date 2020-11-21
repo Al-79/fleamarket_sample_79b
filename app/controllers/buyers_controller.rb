@@ -5,6 +5,7 @@ class BuyersController < ApplicationController
   def index
     @user = current_user
     @address = Address.where(user_id: current_user.id).first
+    
     if @card.present?
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_key)
       customer = Payjp::Customer.retrieve(@card.customer_id) 
@@ -36,6 +37,9 @@ class BuyersController < ApplicationController
       :customer => @card.customer_id,
       :currency => 'jpy',
     )
+    @item_buyer= Item.find(params[:item_id])
+    @item_buyer.update( buyer_id: current_user.id)
+
     redirect_to done_item_buyers_path
   end
 
@@ -54,5 +58,3 @@ class BuyersController < ApplicationController
   end
 
 end
-
-
