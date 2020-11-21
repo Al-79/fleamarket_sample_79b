@@ -18,11 +18,13 @@
     position: fixed;
     padding: 15px;
     &__text{
-      color: #fff;
       display: block;
       font-size: 18px;
-      text-decoration: none;
       margin-bottom: 5px;
+      a{
+        color: #fff;
+        text-decoration: none;
+      }
     }
     .icon-btn{
       width: 60%;
@@ -34,7 +36,6 @@
   }
   .main{
     height: 560px;
-    text-align: center;
     background-image: image-url('bg-mainVisual-pict_pc.jpg');
     background-size: cover;
     background-repeat: no-repeat;

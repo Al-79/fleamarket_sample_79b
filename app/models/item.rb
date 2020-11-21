@@ -2,8 +2,9 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
 
   belongs_to :category
-  belongs_to :brand
+  belongs_to :brand, optional: true
   has_many :item_images, dependent: :destroy
+  accepts_nested_attributes_for :item_images, allow_destroy: true
   belongs_to :user
   belongs_to_active_hash :size
   belongs_to_active_hash :condition
@@ -11,8 +12,13 @@ class Item < ApplicationRecord
   belongs_to_active_hash :postage_payer
   belongs_to_active_hash :prefecture
 
-  validates :name, presence:true, length: { maximum: 40 }
-  validates :category,:size,:condition, :user_id, :price, :introduction,:preparation_day,:postage_payer,:prefecture,presence: true
-  validates_associated :item_images
-  validates :item_images, presence:true
+  validates :name, presence: true
+  validates :introduction, presence: true
+  validates :category_id, presence: true
+  validates :condition_id, presence: true
+  validates :preparation_day_id, presence: true
+  validates :postage_payer_id, presence: true
+  validates :prefecture_id, presence: true
+  validates :price, presence: true
+  validates :item_images, presence: true
 end
