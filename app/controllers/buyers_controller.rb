@@ -3,9 +3,7 @@ class BuyersController < ApplicationController
   before_action :set_card,:set_item
 
   def index
-    @user = current_user
     @address = Address.where(user_id: current_user.id).first
-    
     if @card.present?
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_key)
       customer = Payjp::Customer.retrieve(@card.customer_id) 

@@ -46,8 +46,8 @@
           =@address.address_line
           %p=@address.building_name
         .buy-body__main__destination__name
-          =@user.family_name
-          ="#{@user.first_name} 様"
+          =current_user.family_name
+          ="#{current_user.first_name} 様"
     .buy-body__main__purchase
       = form_tag(action: :pay, method: :post, data: { confirm: "購入しました" }) do
         %button.buy-button{type:"submit", id:"purchase-btn"} 購入確定ボタン
