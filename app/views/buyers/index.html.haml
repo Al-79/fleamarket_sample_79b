@@ -6,7 +6,7 @@
     .buy-body__main__buy-items
       .buy-body__main__buy-items__info
         .buy-body__main__buy-items__info__image
-          /=image_tag(@images.image[0].images.url,class:"buy-image")
+          = image_tag (@items.item_images[0].image.url), class: "buy-items-image"
         .buy-body__main__buy-items__info__detail
           .buy-body__main__buy-items__info__detail__item-name
             =@items.name
@@ -49,5 +49,5 @@
           =@user.family_name
           ="#{@user.first_name} 様"
     .buy-body__main__purchase
-      = form_tag(action: :pay, method: :post) do
+      = form_tag(action: :pay, method: :post, data: { confirm: "購入しました" }) do
         %button.buy-button{type:"submit", id:"purchase-btn"} 購入確定ボタン

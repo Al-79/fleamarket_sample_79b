@@ -38,17 +38,21 @@
         justify-content: space-between;
         align-items: center;
         height: 115px;
-        margin: 15px 80px;
+        margin: 10px 50px;
         &__image{
           height: 100%;
           width: 35%;
           margin-bottom: 10px;
+          .buy-items-image{
+            height: 150px;
+            width: 160px;
+          }
         }
         &__detail{
           &__item-name{
             line-height: 1.4em;
             margin-bottom: 8px;
-            text-align: start;
+            text-align: center;
             font-size: 17px;
           }
           &__item-price{
@@ -127,7 +131,7 @@
         background-color: $color-furima;
         cursor: pointer;
         color: white;
-        margin-top: 20px;
+        margin-top: 30px;
         width: 250px;
         height: 65px;
         text-align: center;
