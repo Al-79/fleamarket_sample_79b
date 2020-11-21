@@ -6,7 +6,7 @@
     .buy-body__main__buy-items
       .buy-body__main__buy-items__info
         .buy-body__main__buy-items__info__image
-          //=image_tag(@item.images[0].item_images.url,class:"buy-image")
+          /=image_tag(@images.image[0].images.url,class:"buy-image")
         .buy-body__main__buy-items__info__detail
           .buy-body__main__buy-items__info__detail__item-name
             =@items.name
@@ -41,9 +41,9 @@
       .buy-body__main__destination__user
         .buy-body__main__destination__address
           %p=@address.post_code
-          %p=@address.prefecture_id
-          %p=@address.city
-          %p=@address.address_line
+          =@address.prefecture.prefecture
+          =@address.city
+          =@address.address_line
           %p=@address.building_name
         .buy-body__main__destination__name
           =@user.family_name
