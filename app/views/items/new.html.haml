@@ -9,15 +9,22 @@
           .listing-image__sub-tittle 最大10枚までアップロードできます
           %br
           = form.fields_for :item_images do |i|
-            = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", value:"", style: "display:none"
-            %label.listing-camera{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image"}
-              .input-area
-                %i.fas.fa-camera
+            = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", value:"", style: "display:none", class: 'js-file'
+            -# %label.listing-camera{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image"}
+            .input-area
+              %i.fas.fa-camera
+              %br
+              .listing-introduct
+                ドラックアンドドロップ
                 %br
-                .listing-introduct
-                  ドラックアンドドロップ
-                  %br
-                  またはクリックしてファイルをアップロード
+                またはクリックしてファイルをアップロード
+              -# .hidden-content
+              -#   = form.fields_for :images do |i|
+              -#     = i.file_field :image, class: "hidden-field"
+                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][image]", id: "item_item_images_attributes_1_image", class: 'js-file' }
+                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][image]", id: "item_item_images_attributes_2_image" ,class: 'js-file'}
+                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][image]", id: "item_item_images_attributes_3_image" ,class: 'js-file'}
+                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][4][image]", id: "item_item_images_attributes_4_image" ,class: 'js-file'}
         .listing-item
           %label.listing-item__tittle 商品名
           %label.Mandatory 必須
