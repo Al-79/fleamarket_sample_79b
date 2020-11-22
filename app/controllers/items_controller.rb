@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
     item = Item.new(item_params)
     item.brand_id = brand.id
     if item.save!
+      redirect_to confirmation_item_path(current_user)
     else
       @item = Item.new
       render :new
