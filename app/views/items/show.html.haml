@@ -7,11 +7,11 @@
           = @item.name
         .show-item__images
           .show-item__images__main
-            - @item.item_images.each do |item|
-              =image_tag item.image.url class:"show-image-main"
+            = image_tag @item.item_images[0].image.url,size:"400x350", class:"show-image-main"
           .show-item__images__sub
             - @item.item_images.each do |item|
-              =image_tag item.image.url class:"show-image-sub"
+              =image_tag item.image.url,size:"140x100", class:"show-image-sub"
+            
         .show-item__price
           =@item.price
         .show-item__send-tax
