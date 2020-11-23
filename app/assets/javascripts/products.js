@@ -12,23 +12,42 @@ $(function(){
                   </div>`;
     return html;
   }
+  // プレビュー用のimgタグを生成する関数
+  const buildImg = (index, url)=> {
+    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    return html;
+  }
 
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-    console.log($('.input-area'))
-    $(document).on('change', ".js-file",function(e) {
-    // fileIndexの先頭の数字を使ってinputを作る
-    console.log(fileIndex[0])
-    // $(`#item_images_attributes_${fileIndex[0]}_image`[0]).trigger("click")
-    $('.listing-image').append(buildFileField(fileIndex[0]))
-    console.log(111)
-    // $('.listing-camera').attr('for', `item_item_images_attributes_${fileIndex[0]}_image`)
-    fileIndex.shift();
-    // 末尾の数に1足した数を追加する
-    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-    console.log(fileIndex[0])
-    console.log(fileIndex)
-  });
+  // 既に使われているindexを除外
+  lastIndex = $('.js-file_group:last').data('index');
+  fileIndex.splice(0, lastIndex);
+
+  $('.hidden-destroy').hide();
+
+  $(document).on('change', ".js-file",function(e) {
+    const targetIndex = $(this).parent().data('index');
+    // ファイルのブラウザ上でのURLを取得する
+    const file = e.target.files[0];
+    const blobUrl = window.URL.createObjectURL(file);
+
+    // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
+    if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
+      img.setAttribute('src', blobUrl);
+    } else {  // 新規画像追加の処理
+      $('.listing-image').append(buildImg(targetIndex, blobUrl));
+      // fileIndexの先頭の数字を使ってinputを作る
+      console.log(fileIndex[0])
+      // $(`#item_images_attributes_${fileIndex[0]}_image`[0]).trigger("click")
+      $('.listing-image').append(buildFileField(fileIndex[0]))
+      console.log(111)
+      // $('.listing-camera').attr('for', `item_item_images_attributes_${fileIndex[0]}_image`)
+      fileIndex.shift();
+      // 末尾の数に1足した数を追加する
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+    }
+    });
 
   $(document).on('click', '.input-area', function() {
     $('.js-file:last').trigger('click')
