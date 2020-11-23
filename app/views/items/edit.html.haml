@@ -1,0 +1,91 @@
+.listing-main
+  .listing-containar
+    .listing-body
+      = form_with model: @item, local: true do |form|
+        .listing-image
+          %label.listing-image__tittle 出品画像
+          %label.Mandatory 必須
+          %br
+          .listing-image__sub-tittle 最大10枚までアップロードできます
+          %br
+          = form.fields_for :item_images do |i|
+            = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", value:"", style: "display:none", class: 'js-file'
+            -# %label.listing-camera{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image"}
+            .input-area
+              %i.fas.fa-camera
+              %br
+              .listing-introduct
+                ドラックアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
+              -# .hidden-content
+              -#   = form.fields_for :images do |i|
+              -#     = i.file_field :image, class: "hidden-field"
+                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][image]", id: "item_item_images_attributes_1_image", class: 'js-file' }
+                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][image]", id: "item_item_images_attributes_2_image" ,class: 'js-file'}
+                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][image]", id: "item_item_images_attributes_3_image" ,class: 'js-file'}
+                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][4][image]", id: "item_item_images_attributes_4_image" ,class: 'js-file'}
+        .listing-item
+          %label.listing-item__tittle 商品名
+          %label.Mandatory 必須
+          %br
+          = form.text_field :name , class: "listing-item__tittle--area", placeholder: "  40文字まで" ,maxlength: "40"
+          %br
+          %label.listing-item__introduct 商品の説明
+          %label.Mandatory 必須
+          %br
+          = form.text_area :introduction, class: "listing-item__tittle--space", placeholder: " 商品の説明\n(必須 1000文字以内)\n\n(色、素材、重さ、定価、注意点など)\n\n  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,maxlength: "40"
+          %br
+        .listing-show
+          %label.listing-show__category  カテゴリー
+          %label.Mandatory 必須
+          %br
+          .listing-show__area
+            = form.collection_select :category_id, Category.all, :id, :name, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+          %label.listing-show__brand ブランド
+          %label.Any 任意
+          %br
+          = form.text_field :brand_name, class: "listing-show__brand--area", placeholder: "  例) シャネル"
+          %br
+          %label.listing-show__size  サイズ
+          %label.Any 任意
+          %br
+          .listing-show__area
+            = form.collection_select :size_id, Size.all, :id, :size, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+          %label.listing-show__condition  商品の状態
+          %label.Mandatory 必須
+          %br
+          .listing-show__area
+            = form.collection_select :condition_id, Condition.all, :id, :condition, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+          %br
+        .listing-delivery                    
+          .listing-delivery__show 配送について
+          %br
+          %label.listing-delivery__burden 配送料の負担
+          %label.Mandatory 必須
+          %br
+          .listing-delivery__area
+            = form.collection_select :postage_payer_id, PostagePayer.all, :id, :postage_payer, { include_blank: "選択してください" }, { class: "listing-delivery__area--category" }
+          %label.listing-delivery__prefectures 発送元の地域
+          %label.Mandatory 必須
+          %br
+          .listing-delivery__area
+            = form.collection_select :prefecture_id, Prefecture.all, :id, :prefecture, { include_blank: "選択してください" }, { class: "listing-delivery__area--category" }
+          %label.listing-delivery__day 発送までの日数
+          %label.Mandatory 必須
+          %br
+          .listing-delivery__area
+            = form.collection_select :preparation_day_id, PreparationDay.all, :id, :preparation_day, { include_blank: "選択してください" }, { class: "listing-delivery__area--category" }
+        .listing-price
+          .listing-price__description 価格(¥300〜9,9999,999)
+          %br
+          .listing-price__show
+            .listing-price__show--notation
+              %label 販売価格
+              %label.Mandatory 必須
+              %span.enn ¥
+            = form.text_field :price , class: "listing-price__show--area" ,placeholder: "0    "
+            %br
+          .listing-price__fee 販売手数料 (10%)
+        .Listing-form
+          = form.submit "変更する", class: "listing_submit"

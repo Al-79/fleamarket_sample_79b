@@ -3,8 +3,14 @@ require 'rails_helper'
 describe Item do
   describe '#create' do
 
+    it "全て揃っている時保存できる" do
+      item = build(:item)
+      item.item_images << FactoryBot.build(:item_image)
+      expect(item).to be_valid
+    end
+
     it "nameがない場合は登録できないこと" do
-      item = build(:item, name: "nil")
+      item = build(:item, name: nil)
       item.valid?
       expect(item.errors[:name]).to include("を入力してください")
     end
@@ -16,17 +22,11 @@ describe Item do
     end
 
     it "conditionがない場合は登録できないこと" do
-      item = build(:item, condition: nil)
+      item = build(:item, condition_id: nil)
       item.valid?
-      expect(item.errors[:condition]).to include("を入力してください")
+      expect(item.errors[:condition_id]).to include("を入力してください")
     end
     
-    it "sizeがない場合は登録できないこと" do
-      item = build(:item, size: nil)
-      item.valid?
-      expect(item.errors[:size]).to include("を入力してください")
-    end
-
     it "priceがない場合は登録できないこと" do
       item = build(:item, price: nil)
       item.valid?
@@ -40,9 +40,9 @@ describe Item do
     end
 
     it ":preparation_dayがない場合は登録できないこと" do
-      item = build(:item, preparation_day: nil)
+      item = build(:item, preparation_day_id: nil)
       item.valid?
-      expect(item.errors[:preparation_day]).to include("を入力してください")
+      expect(item.errors[:preparation_day_id]).to include("を入力してください")
     end
 
     it "category_idがない場合は登録できないこと" do
@@ -52,21 +52,9 @@ describe Item do
     end
 
     it "postage_payerがない場合は登録できないこと" do
-      item = build(:item, cpostage_payer: nil)
+      item = build(:item, postage_payer_id: nil)
       item.valid?
-      expect(item.errors[:postage_payer]).to include("を入力してください")
+      expect(item.errors[:postage_payer_id]).to include("を入力してください")
     end
-
-    it "user_idがない場合は登録できないこと" do
-      item = build(:item, user_id: nil)
-      item.valid?
-      expect(item.errors[:user_id]).to include("を入力してください")
-    end
-    
-    it "全て揃っている時保存できる" do
-      item = build(:item)
-      expect(item).to be_valid
-    end
-
   end
 end
