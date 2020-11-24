@@ -1,0 +1,10 @@
+.confirmation
+  .confirmation__wrapper
+    .confirmation__wrapper__title
+      商 品 を 購 入 し ま し た
+    .confirmation__wrapper__message
+      商品到着までしばらくお待ちください
+      = icon('fas', 'truck')
+    =link_to root_path(current_user),class:'back-btn' do
+      .confirmation__wrapper__btn
+        戻 る

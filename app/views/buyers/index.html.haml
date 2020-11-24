@@ -1,0 +1,53 @@
+.buy-body
+  .buy-body__main
+    .buy-body__main__title
+      .buy-body__main__title__sentence
+        購入内容の確認
+    .buy-body__main__buy-items
+      .buy-body__main__buy-items__info
+        .buy-body__main__buy-items__info__image
+          = image_tag (@items.item_images[0].image.url), class: "buy-items-image"
+        .buy-body__main__buy-items__info__detail
+          .buy-body__main__buy-items__info__detail__item-name
+            =@items.name
+          .buy-body__main__buy-items__info__detail__item-price
+            送料込み
+            = "¥#{@items.price.to_s}"
+    .buy-body__main__price
+      .buy-body__main__price__table-word
+        お支払い金額
+      .buy-body__main__price__table-price
+        = "¥#{@items.price.to_s}"
+    .buy-body__main__payment
+      .buy-body__main__payment__content
+        .buy-body__main__payment__content__payment_system
+          お支払い方法
+        .buy-body__main__payment__content__choice
+          %p クレジットカード情報
+          %p= image_tag "logo/#{@card_src}", alt: @card_brand, id: "card-image"
+          - if @default_card_information.blank?
+            %mypages_path(current_user)
+          - else
+            = "**** **** **** " + "#{@default_card_information.last4}"
+            %br
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = "有効期限 " + exp_month + " / " + exp_year
+            %br
+        .buy-body__main__payment__
+    .buy-body__main__destination
+      .buy-body__main__destination__detail
+        配送先
+      .buy-body__main__destination__user
+        .buy-body__main__destination__address
+          %p=@address.post_code
+          =@address.prefecture.prefecture
+          =@address.city
+          =@address.address_line
+          %p=@address.building_name
+        .buy-body__main__destination__name
+          =current_user.family_name
+          ="#{current_user.first_name} 様"
+    .buy-body__main__purchase
+      = form_tag(action: :pay, method: :post, data: { confirm: "購入しました" }) do
+        %button.buy-button{type:"submit", id:"purchase-btn"} 購入確定ボタン
