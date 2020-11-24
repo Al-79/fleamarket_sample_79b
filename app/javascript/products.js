@@ -39,10 +39,7 @@ $(function(){
       $('.listing-image').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       console.log(fileIndex[0])
-      // $(`#item_images_attributes_${fileIndex[0]}_image`[0]).trigger("click")
       $('.listing-image').append(buildFileField(fileIndex[0]))
-      console.log(111)
-      // $('.listing-camera').attr('for', `item_item_images_attributes_${fileIndex[0]}_image`)
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
