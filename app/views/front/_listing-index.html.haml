@@ -7,7 +7,7 @@
         - @items.last(5).each do |item|
           .pickup-container__product__item__image
             = link_to "#" do
-              - item.item_images.each do |i|
+              - item.item_images.first(1).each do |i|
                 = image_tag i.image.url, class:"item-image"
               .pickup-container__product__item__body
                 .pickup-container__product__item__body__title
