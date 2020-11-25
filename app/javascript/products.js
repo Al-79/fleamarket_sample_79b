@@ -38,7 +38,6 @@ $(function(){
     } else {  // 新規画像追加の処理
       $('.listing-image').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
-      console.log(fileIndex[0])
       $('.listing-image').append(buildFileField(fileIndex[0]))
       fileIndex.shift();
       // 末尾の数に1足した数を追加する
