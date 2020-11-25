@@ -17,7 +17,8 @@
     %tr
       %th 商品サイズ
       %td 
-        = item.size.size
+        - if item.size_id
+          = item.size
     %tr
       %th 商品状態
       %td 

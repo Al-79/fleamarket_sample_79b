@@ -6,7 +6,7 @@
       .pickup-container__product__item
         - @items.last(5).each do |item|
           .pickup-container__product__item__image
-            = link_to "#" do
+            = link_to item_path(item.id) do
               - item.item_images.first(1).each do |i|
                 = image_tag i.image.url, class:"item-image"
               .pickup-container__product__item__body
@@ -40,7 +40,7 @@
                       ★ 1
                 .pickup-container__product__item__body__tax
                   (税込)
-        = link_to "#" do
+        = link_to item_path(:id) do
           .pickup-container__product__item__image
             = image_tag "image_2.jpg", class:"item-image"
             .pickup-container__product__item__body
