@@ -264,8 +264,6 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    ruby-vips (2.0.17)
-      ffi (~> 1.9)
     rspec-core (3.9.3)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.3)
@@ -376,8 +374,8 @@ DEPENDENCIES
   capybara (>= 2.15)
   carrierwave
   devise
-  fog-aws
   factory_bot_rails
+  fog-aws
   font-awesome-sass
   haml-rails (>= 1.0, <= 2.0.1)
   jbuilder (~> 2.7)
