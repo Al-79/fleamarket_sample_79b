@@ -27,7 +27,8 @@
               削除 
         - else 
           %h1.purchase
-            購入
+            = link_to item_buyers_path(@item) do
+              購入
         
     .option
       = link_to "#", class:"likes_btn" do

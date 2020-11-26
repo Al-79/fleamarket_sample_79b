@@ -18,10 +18,11 @@
   font-size: 30px;
   text-align: center;
   width: 150px;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
-
+  cursor: pointer;
 }
-
+.edit:hover{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
 
 .delete{
   color: white;
@@ -32,19 +33,30 @@
   font-size: 30px;
   text-align: center;
   width: 150px;
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+  cursor: pointer;
 
+}
+.delete:hover{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
 }
 
 
 
 .purchase{
-  color: white;
+  width: 200px;
   padding: 5px;
+  margin: 0px 200px;
   border: 1px solid red;
   border-radius: 5px;
   background-color: red;
   font-size: 30px;
   text-align: center;
+  cursor: pointer;
+  a{color: white;
+    text-decoration: none;
+  }
+}
+
+.purchase:hover{
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
 }
