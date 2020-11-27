@@ -1,3 +1,62 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.buttons{
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+
+.edit{
+  color: white;
+  padding: 5px;
+  border: 1px solid #3ccace;
+  border-radius: 5px;
+  background-color: #3ccace;
+  font-size: 30px;
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+}
+.edit:hover{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+.delete{
+  color: white;
+  padding: 5px;
+  border: 1px solid #3ccace;
+  border-radius: 5px;
+  background-color: #3ccace;
+  font-size: 30px;
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+
+}
+.delete:hover{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
+
+
+
+.purchase{
+  width: 200px;
+  padding: 5px;
+  margin: 0px 200px;
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: red;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  a{color: white;
+    text-decoration: none;
+  }
+}
+
+.purchase:hover{
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);
+}
