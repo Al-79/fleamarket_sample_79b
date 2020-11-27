@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
-    # order("deskorask").limit(5)
+    
   end
 
   def new
