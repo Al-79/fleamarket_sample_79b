@@ -38,7 +38,6 @@ class ItemsController < ApplicationController
     @item.destroy 
   end
 
-  
 
   private
   def brand_params
