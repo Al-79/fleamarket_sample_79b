@@ -1,8 +1,7 @@
-.contentrow
-  .success
-    %h3 削除が完了しました。
-  .btn
-    = link_to 'トップページに戻る',root_path 
-
-
-    
+.confirmation
+  .confirmation__wrapper
+    .confirmation__wrapper__title
+      削 除 が 完 了 し ま し た
+    =link_to root_path(current_user),class:'back-btn' do
+      .confirmation__wrapper__btn
+        戻る
