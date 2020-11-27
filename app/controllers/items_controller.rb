@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.all
+    
   end
 
   def new
@@ -20,14 +21,19 @@ class ItemsController < ApplicationController
     item = Item.new(item_params)
     item.brand_id = brand.id
     if item.save!
+      redirect_to confirmation_item_path(current_user)
     else
       @item = Item.new
       render :new
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
   def show
-    @items = Item.all
+    @item = Item.find(params[:id])
   end
   def search
     #ajax通信を開始
@@ -43,6 +49,8 @@ class ItemsController < ApplicationController
     end
   end
 
+  
+
   private
   def brand_params
     params.require(:item).permit(:brand_name)
@@ -50,11 +58,9 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :introduction, :price, :category_id, :brand_id, :size_id, :condition_id, :preparation_day_id, :postage_payer_id, :prefecture_id, item_images_attributes: [:image]).merge(user_id: current_user.id)
   end
-
   def set_parents
     @parents = Category.where(ancestry: nil)
   end
-
   def show
   end
 end
