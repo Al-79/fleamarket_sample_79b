@@ -24,7 +24,8 @@
             %h1.edit
               編集
             %h1.delete
-              =link_to '削除', "/items/#{@item.id}", method: :delete 
+              =link_to '削除',item_path(@item.id),method: :delete
+                
         - else 
           %h1.purchase
             = link_to item_buyers_path(@item) do

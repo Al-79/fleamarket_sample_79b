@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_group, only: [:edit, :show, :destroy]
+
   def index
     @items = Item.all
   end
@@ -26,16 +28,16 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy 
+    if @item.destroy
+    else
+      render :show
+    end
   end
 
 
@@ -45,6 +47,9 @@ class ItemsController < ApplicationController
   end
   def item_params
     params.require(:item).permit(:name, :introduction, :price, :category_id, :brand_id, :size_id, :condition_id, :preparation_day_id, :postage_payer_id, :prefecture_id, item_images_attributes: [:image]).merge(user_id: current_user.id)
+  end
+  def set_group
+    @item = Item.find(params[:id])
   end
 
   
