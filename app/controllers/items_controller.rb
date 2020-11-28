@@ -34,12 +34,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
-    else
-      render :show unless @item.destroy
-    end
+    render :show unless @item.destroy
   end
-
+  
 
   private
   def brand_params
