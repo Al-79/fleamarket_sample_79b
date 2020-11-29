@@ -24,7 +24,8 @@
             %h1.edit
               編集
             %h1.delete
-              削除 
+              =link_to '削除',item_path(@item.id),method: :delete
+                
         - else 
           %h1.purchase
             = link_to item_buyers_path(@item) do
@@ -53,7 +54,7 @@
           食品
         = link_to "#" do
           .related-item__image
-            = image_tag "image_2.jpeg", class:"item-image"
+            = image_tag "image_2.jpg", class:"item-image"
             .related-item__image__box
               .related-item__image__box__title
                 テキスト

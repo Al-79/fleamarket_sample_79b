@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
   before_action :set_parents, only: [:new, :create]
   
+  before_action :set_group, only: [:edit, :show, :destroy]
+
   def index
     @items = Item.all
-    
   end
 
   def new
@@ -29,11 +30,9 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def show
-    @item = Item.find(params[:id])
   end
   def search
     #ajax通信を開始
@@ -49,6 +48,9 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    render :show unless @item.destroy
+  end
   
 
   private
@@ -60,6 +62,8 @@ class ItemsController < ApplicationController
   end
   def set_parents
     @parents = Category.where(ancestry: nil)
+  def set_group
+    @item = Item.find(params[:id])
   end
 
 end
