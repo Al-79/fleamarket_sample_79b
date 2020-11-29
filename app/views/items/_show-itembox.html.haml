@@ -6,7 +6,13 @@
         = item.user.nickname
     %tr
       %th カテゴリ
-      %td= link_to item.category.name, "#", class:"category-name"
+      %td
+        = link_to "#", class:"category-name" do
+          = item.category.root.name
+          = icon("fas", "angle-right")
+          = item.category.parent.name
+          = icon("fas", "angle-right")
+          = item.category.name
     %tr
       %th ブランド
       %td 

@@ -3,7 +3,7 @@ $(function(){
   function build_childSelect() {
     let child_select = `<i class="fas fa-angle-down"></i>
                         <br>
-                        <select name="post[category_id]" class="child_category_id">
+                        <select name="item[category_id]" class="child_category_id">
                           <option value="">---</option>
                         </select>
                         `
@@ -20,7 +20,7 @@ $(function(){
   function build_gcSelect() {
     let gc_select = `<i class="fas fa-angle-down"></i>
                      <br>
-                     <select name="post[category_id]" class="gc_category_id">
+                     <select name="item[category_id]" class="gc_category_id">
                        <option value="">---</option>
                      </select>`
     return gc_select;
@@ -42,6 +42,7 @@ $(function(){
       })
         .done(function (data) {
           let child_select = build_childSelect;
+
           // selectタグを生成してビューにappendする
           $(".category_field_c").empty().append(child_select);
           $(".category_field_gc").empty();
@@ -49,7 +50,6 @@ $(function(){
           data.forEach(function (d) {
             let option_html = build_Option(d)
             $(".child_category_id").append(option_html);
-            console.log(option_html)
           })
         })
         .fail(function () {
@@ -65,7 +65,7 @@ $(function(){
       $.ajax({
         url: '/items/search',
         type: 'GET',
-        // postsコントローラーにparamsをchildren_idで送る
+        // itemsコントローラーにparamsをchildren_idで送る
         data: { children_id: childValue },
         dataType: 'json'
       })
