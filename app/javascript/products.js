@@ -1,12 +1,11 @@
 $(function(){
-  console.log("ここここ");
   // 画像用のinputを生成する関数
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="item[item_images_attributes][${index}][image]"
                     id="item_item_images_attributes_${index}_image"
-                    style="display:none"
+                    // style="display:none"
                     ><br>
                     <div class="js-remove", style="display:none">削除</div>
                   </div>`;
@@ -14,7 +13,13 @@ $(function(){
   }
   // プレビュー用のimgタグを生成する関数
   const buildImg = (index, url)=> {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<div data-index="${index}">
+                    <img src="${url}" width="100px" height="100px">
+                    <div class="js-control">
+                      <div class="js-edit">編集</div>
+                      <div class="js-remove">削除</div>
+                    </div
+                  </div>`;
     return html;
   }
 
@@ -45,13 +50,20 @@ $(function(){
     }
     });
 
+
   $(document).on('click', '.input-area', function() {
-    $('.js-file:last').trigger('click')
+    file_length = $('.js-file').length-1
+    if (file_length == 3){
+      alert("2枚登録しましたので、これ以上登録できないです。");
+    } else{
+      $('.js-file:last').trigger('click')
+    }
   })
 
-
   $('.listing-image').on('click', '.js-remove', function() {
-    $(this).parent().remove();
+    rm_id = $(this).parent().parent().data("index")
+    $('.js-file_group[data-index='+rm_id+']').remove()
+    $(this).parent().parent().remove();
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#item_item_images_attributes_0_image').append(buildFileField(fileIndex[0]));
   });

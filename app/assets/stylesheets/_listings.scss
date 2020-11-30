@@ -209,6 +209,26 @@
   font-size: 12px;
   width: 40px;
 }
+.js-img{
+  text-align: center;
+  background-color: #3ccace;
+}
+.js-control{
+  display: flex;
+  justify-content: space-between;
+}
+.js-edit{
+  margin: 0 0 0 100px;
+}
+.js-edit:hover{
+  color: #3ccace;
+}
+.js-remove{
+  margin: 0 100px 0 0;
+}
+.js-remove:hover{
+  color: #3ccace;
+}
 .js-file_group{
   height: 0px;
 }
