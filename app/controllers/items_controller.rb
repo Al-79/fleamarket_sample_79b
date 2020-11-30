@@ -62,6 +62,7 @@ class ItemsController < ApplicationController
   end
   def set_parents
     @parents = Category.where(ancestry: nil)
+  end
   def set_group
     @item = Item.find(params[:id])
   end
