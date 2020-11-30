@@ -23,6 +23,9 @@ Rails.application.routes.draw do
         post 'pay', to: 'buyers#pay'
       end
     end
+    collection do
+      get :search
+    end
   end
 
   resources :mypages, only: [:index]
