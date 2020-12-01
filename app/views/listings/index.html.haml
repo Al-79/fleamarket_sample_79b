@@ -30,18 +30,23 @@
           = form.text_area :introduction, class: "listing-item__tittle--space", placeholder: " 商品の説明\n(必須 1000文字以内)\n\n(色、素材、重さ、定価、注意点など)\n\n  例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,maxlength: "40"
           %br
         .listing-show
+          -# %label.listing-show__category  カテゴリー
+          -# %label.Mandatory 必須
+          -# %br
+          -# .listing-show__area
+          -#   %select.listing-show__area--category{name: "category", type: "text"}
+          -#     %option{value: ""} 選択して下さい
+          -#     %option{value: "レディース"}レディース
+          -#     %option{value: "メンズ"}メンズ
+          -#     %option{value: "ベビー・キッズ"}ベビー・キッズ
+          -#     %option{value: "インテリア・住まい・小物"}インテリア・住まい・小物
+          -#     %option{value: "本・音楽・ゲーム"}本・音楽・ゲーム
+          -#     %option{value: "おもちゃ・ホビー・グッズ"}おもちゃ・ホビー・グッズ
           %label.listing-show__category  カテゴリー
           %label.Mandatory 必須
           %br
           .listing-show__area
-            %select.listing-show__area--category{name: "category", type: "text"}
-              %option{value: ""} 選択して下さい
-              %option{value: "レディース"}レディース
-              %option{value: "メンズ"}メンズ
-              %option{value: "ベビー・キッズ"}ベビー・キッズ
-              %option{value: "インテリア・住まい・小物"}インテリア・住まい・小物
-              %option{value: "本・音楽・ゲーム"}本・音楽・ゲーム
-              %option{value: "おもちゃ・ホビー・グッズ"}おもちゃ・ホビー・グッズ
+            = form.collection_select :category_id, Category.all, :id, :name, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
           %label.listing-show__brand ブランド
           %label.Any 任意
           %br

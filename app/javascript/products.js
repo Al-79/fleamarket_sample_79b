@@ -5,9 +5,7 @@ $(function(){
                     <input class="js-file" type="file"
                     name="item[item_images_attributes][${index}][image]"
                     id="item_item_images_attributes_${index}_image"
-                    // style="display:none"
                     ><br>
-                    <div class="js-remove", style="display:none">削除</div>
                   </div>`;
     return html;
   }
@@ -52,8 +50,8 @@ $(function(){
 
 
   $(document).on('click', '.input-area', function() {
-    file_length = $('.js-file').length-1
-    if (file_length == 3){
+    file_length = $('.js-file').length-2
+    if (file_length == 2){
       alert("2枚登録しましたので、これ以上登録できないです。");
     } else{
       $('.js-file:last').trigger('click')
