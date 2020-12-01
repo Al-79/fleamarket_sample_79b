@@ -16,7 +16,7 @@
             = link_to "/" do
               = image_tag "logo.png"
           .header__searchbox
-            = form_with(model: @item, local: true) do |form|
+            = form_with(local: true) do |form|
               = form.text_field :name, placeholder: "キーワードから探す", class:"header__searchbox--input"
               .header__searchbox--icon
                 = button_tag type: :submit do

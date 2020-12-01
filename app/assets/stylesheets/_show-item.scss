@@ -72,7 +72,7 @@
             }
           }
           &__sub{
-            height: 88px;
+            height: 100px;
             width: 140px;
             margin-right: 10px;
             display: flex;
@@ -141,6 +141,9 @@
           .category-name{
             text-decoration: none;
             color: #3CCACE;
+            .fa-angle-right{
+              padding: 0 20px;
+            }
           }
         }
       }

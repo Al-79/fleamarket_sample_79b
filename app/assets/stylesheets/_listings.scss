@@ -59,6 +59,24 @@
   right: 20px;
   text-align: center;
 }
+
+//jsでのカテゴリー機能発火時の子要素、孫要素
+.child_category_id{
+  width: 270px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.gc_category_id{
+  width: 270px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.fa-angle-down{
+  margin-right: 250px;
+}
+
 .listing-item{
   padding-left: 20px;
   padding-bottom: 10px;
