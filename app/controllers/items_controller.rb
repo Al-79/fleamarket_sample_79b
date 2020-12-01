@@ -25,6 +25,7 @@ class ItemsController < ApplicationController
       redirect_to confirmation_item_path(current_user)
     else
       @item = Item.new
+      @item.item_images.new
       render :new
     end
   end
