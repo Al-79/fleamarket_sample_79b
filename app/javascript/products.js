@@ -1,12 +1,10 @@
 $(function(){
   // 画像用のinputを生成する関数
   const buildFileField = (index)=> {
-    const html = `<div data-index="${index}" class="js-file_group">
-                    <input data-index="${index}" class="js-file" type="file"
-                    name="item[item_images_attributes][${index}][image]"
-                    id="item_item_images_attributes_${index}_image"
-                    ><br>
-                  </div>`;
+    const html = `<input data-index="${index}" class="js-file" type="file"
+                  name="item[item_images_attributes][${index}][image]"
+                  id="item_item_images_attributes_${index}_image"
+                  ><br>`;
     return html;
   }
   // プレビュー用のimgタグを生成する関数
@@ -24,13 +22,13 @@ $(function(){
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
   // 既に使われているindexを除外
-  lastIndex = $('.js-file_group:last').data('index');
+  lastIndex = $('.js-file:last').data('index');
   fileIndex.splice(0, lastIndex);
 
   $('.hidden-destroy').hide();
 
   $(document).on('change', ".js-file",function(e) {
-    const targetIndex = $(this).parent().data('index');
+    const targetIndex = $(this).data('index');
     console.log(targetIndex)
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
@@ -63,12 +61,13 @@ $(function(){
   $('.listing-image').on('click', '.js-edit', function() {
     ed_id = $(this).parent().parent().data("index")
     $('.js-img[data-index='+ed_id+']').remove()
-    $('.js-file[data-index='+ed_id+']').trigger('click')
+    $('.js-file[data-index='+ed_id+']').remove()
+    $('.js-file:last').trigger('click')
   });
 
   $('.listing-image').on('click', '.js-remove', function() {
     rm_id = $(this).parent().parent().data("index")
-    $('.js-file_group[data-index='+rm_id+']').remove()
+    $('.js-file[data-index='+rm_id+']').remove()
     $(this).parent().parent().remove();
     // 画像入力欄が0個にならないようにしておく
     if ($('.js-file').length == 0) $('#item_item_images_attributes_0_image').append(buildFileField(fileIndex[0]));
