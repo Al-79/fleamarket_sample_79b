@@ -65,6 +65,10 @@ $(function(){
   
   $('.listing-image').on('click', '.js-remove', function() {
     rm_id = $(this).parent().parent().data("index")
+    // 該当indexを振られているチェックボックスを取得する
+    const hiddenCheck = $(`input[data-index="${rm_id}"].hidden-destroy`);
+    // もしチェックボックスが存在すればチェックを入れる
+    if (hiddenCheck) hiddenCheck.prop('checked', true);
     $('.js-file[data-index='+rm_id+']').remove()
     $(this).parent().parent().remove();
     // 画像入力欄が0個にならないようにしておく

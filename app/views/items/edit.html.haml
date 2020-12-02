@@ -18,7 +18,7 @@
           = form.fields_for :item_images do |i|
             = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", data:{index: i.index} , value:"", style: "display:none", class: 'js-file'
             - if i.object.persisted?
-              = i.check_box :_destroy, data: {index: i.index}
+              = i.check_box :_destroy, data: {index: i.index}, class: 'hidden-destroy'
             - if i.object.persisted?
               #js_img.js-img{data:{index: i.index}}
                 = image_tag i.object.image.url, size: '100x100'
