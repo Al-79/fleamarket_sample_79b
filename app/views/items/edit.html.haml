@@ -27,13 +27,6 @@
                     編集
                   .js-remove
                     削除
-          -# .hidden-content
-          -#   = form.fields_for :images do |i|
-          -#     = i.file_field :image, class: "hidden-field"
-              -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][image]", id: "item_item_images_attributes_1_image", class: 'js-file' }
-              -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][image]", id: "item_item_images_attributes_2_image" ,class: 'js-file'}
-              -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][image]", id: "item_item_images_attributes_3_image" ,class: 'js-file'}
-              -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][4][image]", id: "item_item_images_attributes_4_image" ,class: 'js-file'}
         .listing-item
           %label.listing-item__tittle 商品名
           %label.Mandatory 必須
@@ -52,8 +45,12 @@
           .listing-show__area
             = form.collection_select :category_id, @parents, :id, :name, { include_blank: "選択してください", selected: @item.category.root_id }, { class: "listing-show__area--category category_field" }
             .category_field_c
+              = icon("fas", "angle-down")
+              %br
               = form.collection_select :category_id, @item.category.parent.siblings, :id, :name, { include_blank: "選択してください", selected: @item.category.parent_id }, { class: "listing-show__area--category category_field" }
             .category_field_gc
+              = icon("fas", "angle-down")
+              %br
               = form.collection_select :category_id, @item.category.siblings, :id, :name, { include_blank: "選択してください", selected: @item.category_id }, { class: "listing-show__area--category category_field" }
           %label.listing-show__brand ブランド
           %label.Any 任意

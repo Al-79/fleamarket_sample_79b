@@ -30,14 +30,12 @@ $(function(){
 
   $(document).on('change', ".js-file",function(e) {
     const targetIndex = $(this).data('index');
-    console.log(targetIndex)
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
 
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     edit_img = $(`#js_img[data-index="${targetIndex}"]`)[0]
-    console.log(edit_img)
     if (edit_img == null){ // 新規画像追加の処理
       $('.listing-image').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
@@ -62,9 +60,6 @@ $(function(){
 
   $('.listing-image').on('click', '.js-edit', function() {
     ed_id = $(this).parent().parent().data("index")
-    // $('.js-img[data-index='+ed_id+']').remove()
-    // $('.js-file[data-index='+ed_id+']').remove()
-    console.log(ed_id);
     $(`.js-file[data-index="${ed_id}"]`).trigger('click')
   });
   
