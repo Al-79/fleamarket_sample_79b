@@ -9,7 +9,7 @@
           .listing-image__sub-tittle 最大10枚までアップロードできます
           %br
           = form.fields_for :item_images do |i|
-            = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", data:{index: "0"} , value:"", class: 'js-file'
+            = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", data:{index: "0"} , value:"", style: "display:none", class: 'js-file'
             -# %label.listing-camera{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image"}
             .input-area
               %i.fas.fa-camera
@@ -91,4 +91,3 @@
           .listing-price__fee 販売手数料 (10%)
         .Listing-form
           = form.submit "出品する", class: "listing_submit"
-          = form.submit "下書きに保存", class: "draft_submit"

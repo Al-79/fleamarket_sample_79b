@@ -21,5 +21,5 @@ class Item < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :price, presence: true
   validates_inclusion_of :price, in: 50..9999999
-  validates :item_images, presence: true
+  # validates :item_images, presence: true
 end
