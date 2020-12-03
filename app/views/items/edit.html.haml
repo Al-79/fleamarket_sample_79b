@@ -2,29 +2,31 @@
   .listing-containar
     .listing-body
       = form_with model: @item, local: true do |form|
-        .listing-image
+        .listing-image{data:{index: "0"}}
           %label.listing-image__tittle 出品画像
           %label.Mandatory 必須
           %br
           .listing-image__sub-tittle 最大10枚までアップロードできます
           %br
-          = form.fields_for :item_images do |i|
-            = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", value:"", style: "display:none", class: 'js-file'
-            -# %label.listing-camera{for: "item_item_images_attributes_#{@item.item_images.length - 1}_image"}
-            .input-area
-              %i.fas.fa-camera
+          .input-area
+            %i.fas.fa-camera
+            %br
+            .listing-introduct
+              ドラックアンドドロップ
               %br
-              .listing-introduct
-                ドラックアンドドロップ
-                %br
-                またはクリックしてファイルをアップロード
-              -# .hidden-content
-              -#   = form.fields_for :images do |i|
-              -#     = i.file_field :image, class: "hidden-field"
-                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][image]", id: "item_item_images_attributes_1_image", class: 'js-file' }
-                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][image]", id: "item_item_images_attributes_2_image" ,class: 'js-file'}
-                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][3][image]", id: "item_item_images_attributes_3_image" ,class: 'js-file'}
-                  -# %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][4][image]", id: "item_item_images_attributes_4_image" ,class: 'js-file'}
+              またはクリックしてファイルをアップロード
+          = form.fields_for :item_images do |i|
+            = i.file_field :image, type: 'file', name: "item[item_images_attributes][#{i.index}][image]", data:{index: i.index} , value:"", style: "display:none", class: 'js-file'
+            - if i.object.persisted?
+              = i.check_box :_destroy, data: {index: i.index}, class: 'hidden-destroy'
+            - if i.object.persisted?
+              #js_img.js-img{data:{index: i.index}}
+                = image_tag i.object.image.url, size: '100x100'
+                .js-control
+                  .js-edit
+                    編集
+                  .js-remove
+                    削除
         .listing-item
           %label.listing-item__tittle 商品名
           %label.Mandatory 必須
@@ -41,7 +43,15 @@
           %label.Mandatory 必須
           %br
           .listing-show__area
-            = form.collection_select :category_id, Category.all, :id, :name, { include_blank: "選択してください" }, { class: "listing-show__area--category" }
+            = form.collection_select :category_id, @parents, :id, :name, { include_blank: "選択してください", selected: @item.category.root_id }, { class: "listing-show__area--category category_field" }
+            .category_field_c
+              = icon("fas", "angle-down")
+              %br
+              = form.collection_select :category_id, @item.category.parent.siblings, :id, :name, { include_blank: "選択してください", selected: @item.category.parent_id }, { class: "listing-show__area--category category_field" }
+            .category_field_gc
+              = icon("fas", "angle-down")
+              %br
+              = form.collection_select :category_id, @item.category.siblings, :id, :name, { include_blank: "選択してください", selected: @item.category_id }, { class: "listing-show__area--category category_field" }
           %label.listing-show__brand ブランド
           %label.Any 任意
           %br
