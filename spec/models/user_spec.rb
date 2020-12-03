@@ -24,13 +24,13 @@ describe User do
     it "emailがない場合は登録できないこと" do
       user = build(:user, email: nil)
       user.valid?
-      expect(user.errors[:email]).to include("", "は無効です。再入力してください")
+      expect(user.errors[:email]).to include("は無効です。再入力してください")
     end
 
     it "passwordがない場合は登録できないこと" do
       user = build(:user, password: nil)
       user.valid?
-      expect(user.errors[:password]).to include("", "は7文字以上で入力してください", "は無効です。再入力してください")
+      expect(user.errors[:password]).to include("は無効です。再入力してください")
     end
 
     it "passwordが7文字以上であれば登録できること" do
