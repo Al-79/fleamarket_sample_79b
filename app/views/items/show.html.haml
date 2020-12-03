@@ -22,7 +22,7 @@
         - if user_signed_in? && current_user.id == @item.user_id
           .buttons
             %h1.edit
-              編集
+              =link_to '編集',edit_item_path(@item.id),method: :get
             %h1.delete
               =link_to '削除',item_path(@item.id),method: :delete
                 

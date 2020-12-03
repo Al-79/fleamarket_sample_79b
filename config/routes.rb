@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   end
 
   resources :mypages, only: [:index]
-  resources :items, only: [:index, :show, :destroy]
+  resources :items, only: [:index, :show, :destroy, :edit, :update]
   resources :users, only: [:edit, :update, :create]
   resources :card, only: [:create, :show, :edit, :new, :destroy] do
     collection do

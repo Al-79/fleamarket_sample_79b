@@ -1,0 +1,9 @@
+%input.js-file{"data-index" => "${index}", :id => "item_item_images_attributes_${index}_image", :name => "item[item_images_attributes][${index}][image]", :type => "file"}/
+= succeed "`" do
+  %br/
+= succeed "`;" do
+  #js_img.js-img{"data-index" => "${index}"}
+    %img{:height => "100px", :src => "${url}", :width => "100px"}/
+    .js-control
+      .js-edit 編集
+      .js-remove 削除
