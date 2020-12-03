@@ -11,10 +11,6 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :address_line, null: false
       t.string :building_name
       t.string :phone, null: false
-      t.string :first_name, null: false
-      t.string :family_name, null: false
-      t.string :first_name_kana, null: false
-      t.string :family_name_kana, null: false
       t.references :user, null: false, foreign_key: true
       t.timestamps
     end
