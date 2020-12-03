@@ -1,4 +1,7 @@
-.contents.row
-  .success
-    %h3 変更が完了しました。
-    %a.btn{:href => "/"} 一覧へ戻る
+.confirmation
+  .confirmation__wrapper
+    .confirmation__wrapper__title
+      編 集 が 完 了 し ま し た
+    =link_to root_path(current_user),class:'back-btn' do
+      .confirmation__wrapper__btn
+        戻る
