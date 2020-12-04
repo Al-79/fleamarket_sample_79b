@@ -3,10 +3,11 @@
     .listing-body
       = form_with model: @item, local: true do |form|
         .listing-image{data:{index: "0"}}
+          = render 'layouts/error_messages', model: @item
           %label.listing-image__tittle 出品画像
           %label.Mandatory 必須
           %br
-          .listing-image__sub-tittle 最大10枚までアップロードできます
+          .listing-image__sub-tittle 最大4枚までアップロードできます
           %br
           .input-area
             %i.fas.fa-camera

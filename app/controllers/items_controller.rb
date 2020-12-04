@@ -18,12 +18,11 @@ class ItemsController < ApplicationController
       brand = Brand.create(name: params[:item][:brand_name])
     end
     
-    item = Item.new(item_params)
-    item.brand_id = brand.id
-    if item.save!
+    @item = Item.new(item_params)
+    @item.brand_id = brand.id
+    if @item.save
       redirect_to confirmation_item_path(current_user)
     else
-      @item = Item.new
       @item.item_images.new
       render :new
     end
@@ -40,9 +39,15 @@ class ItemsController < ApplicationController
       brand = Brand.create(name: params[:item][:brand_name])
     end
     
-    item = Item.find(params[:id])
-    item.brand_id = brand.id
-    item.update(item_params)
+    @item = Item.find(params[:id])
+    @item.brand_id = brand.id
+    if @item.update(item_params)
+      render :update
+    else
+      @item.item_images.new
+      @parents = Category.where(ancestry: nil)
+      render :edit
+    end
   end
 
   def show
