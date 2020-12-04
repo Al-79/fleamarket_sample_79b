@@ -20,6 +20,6 @@ class Item < ApplicationRecord
   validates :postage_payer_id, presence: true
   validates :prefecture_id, presence: true
   validates :price, presence: true
-  validates_inclusion_of :price, in: 50..9999999
+  validates_inclusion_of :price, in: 300..9999999
   validates :item_images, presence: true
 end
