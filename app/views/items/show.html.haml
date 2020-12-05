@@ -13,7 +13,7 @@
               =image_tag item.image.url,size:"140x100", class:"show-image-sub", id:"#{i}"
             
         .show-item__price
-          =@item.price
+          ="¥#{@item.price}"
         .show-item__send-tax
           (税込)送料込み
         .show-item__detail
